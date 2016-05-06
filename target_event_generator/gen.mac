@@ -1,0 +1,37 @@
+# $Id: shen1.mac 81528 2014-06-02 16:21:24Z vnivanch $
+#
+# macro file for TestEm5.cc    
+#
+# angle distribution of  high energy (50-200 GeV/c) protons
+# transmitted through different targets.
+# G. Shen et al. Phys.Rev. D20 (1979) page 1584.
+#     		    
+/control/cout/ignoreThreadsExcept 0
+/control/verbose 2
+/run/verbose 2
+#
+/testem/det/setAbsMat   Tungsten
+/testem/det/setAbsThick .3504 mm
+/testem/det/setAbsYZ    1 cm
+#
+#/run/setCut  6.05 um
+#/run/setCutForAGivenParticle gamma 2.25 mm
+#
+/run/initialize
+#
+/testem/gun/setDefault
+/gun/particle e- 
+/gun/energy 4 GeV		#momentum 70 GeV/c
+#
+/analysis/setFileName brem
+/analysis/h1/set 2  10000 0.00 0.2 deg	#space angle  
+#/analysis/h1/set 3  10000 0.00 0.2 deg  #space angle  
+
+#/analysis/h1/set 0  10000 2.00 4.0 GeV   #space angle  
+#/analysis/h1/set 1  10000 2.00 4.0 Gev  #space angle  
+
+#
+#/testem/stack/killSecondaries
+#
+/run/beamOn 1000000
+#10000000
