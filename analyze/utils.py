@@ -4,22 +4,32 @@ import utils as u
 import pickle as pkl
 from sklearn.metrics import roc_curve, auc
 from decimal import Decimal
-
+from multiprocessing import Pool
 
 def weights(x):
+        '''
         if x < 8:
             y = 1.0
         elif x < 19:
             y = 19.913/15.7789
         else:
             y = 26.9505/15.7789
+        '''
+        if x < 9:
+            y = 1.0
+        elif x < 19:
+            y = 1.4
+        else:
+            y = 2.1
         return y
 
 
 def load_file(arr_):
+
     event = arr_[2] * arr_[3]
     try:
-        lines = [line.rstrip('\n') for line in open(arr_[0])]
+        a = open(arr_[0])
+        lines = [line.rstrip('\n') for line in a ]
         for line in lines:
             try:
                 if line.find('>') > 0:
@@ -40,28 +50,138 @@ def load_file(arr_):
                     key = 'gen_'  + var[low_+1:high_]
                 else:
                     key = 'reco_' + var[low_+1:high_]
+
                 arr_[1][event][key] = [float(i) for i in arr.split(",")]
             except:
                 pass
+        a.close()
     except:
         print 'The file %s does not exist' % (arr_[0])
+
+
     return arr_[1]
 
 
-def load_events(energy,process,runs,chunk_size,suffix = '',n_cores = 6):
-        from multiprocessing import Pool
+def load_events(folder,prefix,runs,chunk_size,n_cores = 6):
         pool  = Pool(processes=n_cores)              # start 4 worker processes
         print 'Pooling inputs'
-        inputs = [ ["../data/" + suffix +  process + energy + "_" + run + "_MEV.txt",{},chunk_size,int(run)] for run in runs]
+        inputs = [ ["../data/" +folder + prefix  + run + "_MEV.txt",{},chunk_size,int(run)] for run in runs]
         print 'Inputs are loaded, creating super_dict'
         dicts = pool.map(load_file, inputs)
         super_dict = {}
         for k in set(k for d in dicts for k in d):
             super_dict[str(k)] = [d[k] for d in dicts if k in d][0]
+        pool.close()
         return super_dict
 
 
-def prep(e_,bkg = False):
+
+def prep_smear(e_,bkg = False,pdgids = [11.]):
+    keys    = e_.keys()
+    wgt     = np.vectorize(u.weights)
+    ret     = []
+    for key in keys:
+
+        for key_2 in e_[key].keys(): e_[key][key_2] = np.array(e_[key][key_2])
+        if len(e_[key].keys()) != 23: continue
+
+        if bkg:
+            if set(np.array(e_[key]['gen_pdgid'])) != set(pdgids): continue
+            if len(e_[key]['gen_pdgid']) != 2:  continue
+        else:
+            if len(e_[key]['gen_pdgid']) != 1:
+                continue
+            if set(np.array(e_[key]['gen_pdgid'])) != set(pdgids):
+                continue
+            pass
+        if np.max(np.abs(e_[key]['reco_xpos'])) > 100: continue
+        if np.max(np.abs(e_[key]['reco_ypos'])) > 100: continue
+
+        try:
+            photon_energy      = e_[key]['gen_pz'][np.array(e_[key]['gen_pdgid'])==22.][0]
+        except:
+            photon_energy      = 0
+        try:
+            electron_energy    = e_[key]['gen_pz'][np.array(e_[key]['gen_pdgid'])==11.][0]
+        except:
+            electron_energy    = 0
+
+        lay_s,eng_s = e_[key]['reco_layer'],e_[key]['reco_energy']
+        len_s       = len(lay_s)
+
+        eng_dot       = np.dot(wgt(lay_s),eng_s)
+        if eng_dot != eng_dot:continue
+
+
+        if bkg == False:
+            vars_s        = [0,photon_energy,electron_energy,eng_dot]
+
+        else:
+            separation    = np.sqrt( np.power(e_[key]['gen_xpos'][0]-e_[key]['gen_xpos'][1],2) + np.power(e_[key]['gen_ypos'][0]-e_[key]['gen_ypos'][1],2))
+            vars_s        = [separation,photon_energy,electron_energy,eng_dot]
+
+        vars_s = np.hstack(vars_s)
+        ret.append(vars_s);
+
+    return np.array(ret)
+
+
+
+def prep_mask(p_,e_,n_events):
+    p_keys,e_keys    = p_.keys(),e_.keys()
+    wgt        = np.vectorize(u.weights)
+    #dr_counter = np.array([[0,2.5],[0,5.],[0,7.5],[0,10.],[0,12.5],[0,15.],[0,17.5],[0,20.]])
+    counter = 0
+    ret     = []
+    breaker = False
+    for pkey in p_keys:
+        mini_counter = 0
+        for key_2 in p_[pkey].keys(): p_[pkey][key_2] = np.array(p_[pkey][key_2])
+        if breaker:
+            break
+        np.random.shuffle(e_keys)
+        for ekey in e_keys:
+            if len(e_[ekey].keys()) != 23: continue
+            if len(p_[pkey].keys()) != 23: continue
+
+            if e_[ekey]['gen_pdgid'][0] != 11.: continue
+            if p_[pkey]['gen_pdgid'][0] != 22.: continue
+
+            for key_2 in e_[ekey].keys(): e_[ekey][key_2] = np.array(e_[ekey][key_2])
+
+
+            dr =  np.sqrt( np.power(e_[ekey]['gen_xpos'][0]-p_[pkey]['gen_xpos'][0],2) + np.power(e_[ekey]['gen_ypos'][0]-p_[pkey]['gen_ypos'][0],2))
+            '''
+            if dr > np.max(dr_counter[:,1]): continue
+            id_x = np.searchsorted(dr_counter[:,1],dr)
+            if dr_counter[:,0][id_x] > n_events/len(dr_counter) : continue
+            dr_counter[:,0][id_x] = dr_counter[:,0][id_x]+1
+            if np.sum(dr_counter[:,0]) >= n_events:
+            '''
+            counter = counter + 1
+            if counter > n_events:
+                breaker = True
+
+            p_xvtx,p_yvtx,p_zvtx =  p_[pkey]['reco_xpos'],p_[pkey]['reco_ypos'],p_[pkey]['reco_zpos']
+            ele_cords            =  [ [e_[ekey]['reco_xpos'][i],e_[ekey]['reco_ypos'][i],e_[ekey]['reco_zpos'][i]] for i in range(len(e_[ekey]['reco_xpos'])) ]
+            inds = np.array([([p_xvtx[i],p_yvtx[i],p_zvtx[i]] not in ele_cords) for i in range(len(p_xvtx)) ])
+
+            layers,hit_engs = p_[pkey]['reco_layer'],p_[pkey]['reco_energy']
+            gen_eng         = p_[pkey]['gen_pz'][0]
+            eng_dot         = np.dot(wgt(layers),hit_engs)
+            eng_masked      = np.dot(wgt(layers[inds]),hit_engs[inds])
+            ret.append( [dr,np.sum(inds)/float(len(inds)),(eng_dot - eng_masked)/eng_masked,gen_eng] )
+            mini_counter = mini_counter + 1
+            if mini_counter > 100:
+                break
+    ret = np.array(ret)
+    ret = ret[np.argsort(ret[:,0])]
+    pkl.dump({'energy_mask':ret},open('../output/pkl/photon_ele_mask_uneven.pkl','wb') )
+
+    return ret
+
+
+def prep_bdt(e_,bkg = False):
     keys    = e_.keys()
     wgt     = np.vectorize(u.weights)
     ret     = []
@@ -74,7 +194,7 @@ def prep(e_,bkg = False):
             if set(np.array(e_[key]['gen_pdgid'])) != set([11.,22.]): continue
             if e_[key]['gen_pz'][np.array(e_[key]['gen_pdgid'])==22.][0] < 1900: continue
             if e_[key]['gen_pz'][np.array(e_[key]['gen_pdgid'])==22.][0] > 4100: continue
-            if np.sqrt(  np.power((e_[key]['gen_ypos'][0] -e_[key]['gen_ypos'][1]),2)) > 10: continue
+            if np.sqrt(  np.power((e_[key]['gen_ypos'][0] -e_[key]['gen_ypos'][1]),2)) > 20: continue
         else:
             if len(e_[key]['gen_pdgid']) != 1:
                 continue
@@ -106,7 +226,8 @@ def prep(e_,bkg = False):
             frac_eng_s.append(np.sum(eng_s[lay_s == ind])/eng_dot)
 
         mol_s1,mol_s2       = [],[]
-        for line in range(6,28):
+        for line in range(3,28):
+        #for line in range(3,28):
             try:
                 mol1,mol2 = u.calc_cont_r(x_s,y_s,eng_s,lay_s,1,line)
             except:
@@ -114,12 +235,13 @@ def prep(e_,bkg = False):
             mol_s1.append(mol1);mol_s2.append(mol2);
 
         if bkg == False:
-            vars_s        = [1,-10000,len_s,eng_dot,mol_s1[1],mol_s1[-1],mol_s2[1],mol_s2[-1],np.append(frac_hit_s,frac_eng_s),range_s,max_s,min_s]
+            #vars_s        = [1,-10000,len_s,eng_dot,mol_s1[1],mol_s1[-1],mol_s2[1],mol_s2[-1],np.append(frac_hit_s,frac_eng_s),range_s,max_s,min_s]
+            vars_s        = [1,-10000,len_s,eng_dot,mol_s1,mol_s2,np.append(frac_hit_s,frac_eng_s),range_s,max_s,min_s]
 
         else:
             separation    = np.sqrt( np.power(e_[key]['gen_xpos'][0]-e_[key]['gen_xpos'][1],2) + np.power(e_[key]['gen_ypos'][0]-e_[key]['gen_ypos'][1],2))
             eng           = e_[key]['gen_pz'][np.array(e_[key]['gen_pdgid'])==22.][0]
-            vars_s        = [separation,eng,len_s,eng_dot,mol_s1[1],mol_s1[-1],mol_s2[1],mol_s2[-1],np.append(frac_hit_s,frac_eng_s),range_s,max_s,min_s]
+            vars_s        = [separation,eng,len_s,eng_dot,mol_s1,mol_s2,np.append(frac_hit_s,frac_eng_s),range_s,max_s,min_s]
 
         vars_s = np.hstack(vars_s)
         ret.append(vars_s);
@@ -127,17 +249,14 @@ def prep(e_,bkg = False):
     return np.array(ret)
 
 
-def load_event_array(db_merged,db_unmerged):
-    merged_evts,unmerged_evts = {},{}
-    for id,event in enumerate(db_merged):
-        merged_evts[id] = (event)
-    merged_evts = u.prep(merged_evts,True)
-
-    for id,event in enumerate(db_unmerged):
-        unmerged_evts[id] = event
-    unmerged_evts = u.prep(unmerged_evts)
-    return merged_evts,unmerged_evts
-
+def load_event_array(cursor,bkg = True):
+    event_d = {}
+    for id,event in enumerate(cursor):
+        try:
+            event_d[id] = (event)
+        except:
+            print 'The id %s failed' %( id)
+    return event_d
 
 def calc_cont_r(x,y,e_layer,layers,cut_l=0,cut_h=100,confinement = [.68,.90]):
     cut_l = layers >= cut_l
@@ -168,8 +287,9 @@ def calc_cont_r(x,y,e_layer,layers,cut_l=0,cut_h=100,confinement = [.68,.90]):
         return 0,0
     else: return ret[0],ret[1]
 
-
+'''
 def plot_weighted_2d(x,y,weights,disc,bins,name):
+    plt.clf()
 
     plt.plot(x,y,'.r')
     plt.xlabel('x')
@@ -181,7 +301,7 @@ def plot_weighted_2d(x,y,weights,disc,bins,name):
     print 'The shap of h1 is ' + str( H1.shape)
     H, xedges, yedges = np.histogram2d(x,y,bins=nbins,weights = weights)#np.zeros(len(y)) + 1/float(len(y)),normed=True)
     H1[H==0] = 1
-    H[H==0] = 1
+    #H[H==0] = 1
 
     H = H/H1
     # H needs to be rotated and flipped
@@ -204,6 +324,44 @@ def plot_weighted_2d(x,y,weights,disc,bins,name):
     cbar.ax.set_ylabel('Efficiency for Bkg. Rejection')
     plt.savefig(name)
     plt.clf()
+'''
+
+def plot_weighted_2d(x,y,weights,disc,nbins,f_out):
+    # Create some random numbers
+    # Plot data
+    plt.plot(x,y,'.r')
+    plt.xlabel('x')
+    plt.ylabel('y')
+
+    # Estimate the 2D histogram
+
+    H1, xedges, yedges = np.histogram2d(x,y,bins=nbins)
+    print 'The shap of h1 is ' + str( H1.shape)
+    H, xedges, yedges = np.histogram2d(x,y,bins=nbins,weights = weights)
+    H1[H==0],H[H==0] = 1,1
+
+
+    H = H/H1
+    # H needs to be rotated and flipped
+
+    H = np.rot90(H)
+    H = np.flipud(H)
+
+    # Mask zeros
+    Hmasked = np.ma.masked_where(H==0,H) # Mask pixels with a value of zero
+
+    # Plot 2D histogram using pcolor
+    fig2 = plt.figure()
+    plt.pcolormesh(xedges,yedges,Hmasked)
+
+    plt.xlabel('$\\Delta$ R(e-$\\gamma$)',fontsize = 20)
+    plt.ylabel('$\\gamma$ Energy in MeV',fontsize = 20)
+    plt.title('$\\epsilon$(disc < %s),%s Signal Events' %(disc,len(x)),fontsize=20)
+    cbar = plt.colorbar()
+    cbar.ax.set_ylabel('Counts')
+    plt.savefig('%s.png' %(f_out))
+    output = open('%s.pkl' %(f_out), 'wb')
+    pkl.dump({'eff_tuple':(xedges,yedges,Hmasked)},output)
 
 
 def plot_sig_bkg_dists(x_titles,t_vars,t_target):
@@ -256,3 +414,17 @@ def sweep(preds_1_total_sig,mis_tag = .05):
         if mistag > mis_tag: break
     return cut
 
+def identity(x):
+    return x
+
+
+def binned_vals(bins_new,binned_dist,bin_multiplier,trans_func = identity,spacing = 0):
+    ret_dist,binned_dist = [],np.array(binned_dist)
+
+    for id,bin in enumerate(bins_new):
+        if id           == len(bins_new) -1 : break
+        bin_low,bin_high = bin,bins_new[id+1]
+
+        temp_bin        = binned_dist[[id for id,x in enumerate(abs(spacing - trans_func(binned_dist[:,0]) * bin_multiplier)) if bin_low < x  < bin_high ]]
+        ret_dist.append(np.sum(temp_bin[:,1]))
+    return ret_dist
