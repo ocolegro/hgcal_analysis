@@ -4,7 +4,7 @@ from scipy.optimize import curve_fit
 import pickle as pkl
 
 def gaus(x, a, x0, sigma):
-    return a*np.exp(-(x-x0)**2/(2*sigma**2))
+    return a*np.exp(-np.abs((x-x0)**2)/(2*np.abs(sigma)**2))
 
 
 def single_smear(gen_eng,obs_eng,save_string):
@@ -17,11 +17,12 @@ def single_smear(gen_eng,obs_eng,save_string):
         x_0          = obs_eng[inds]
         y, x_edges   = np.histogram(x_0, density=True,bins=25)
         x            = ((np.roll(x_edges,-1) + x_edges)/2.0)[0:len(x_edges)-1]
-        mean,sigma   = np.mean(x), np.std(x)
-
-        popt,pcov = curve_fit(gaus,x,y,p0=[1,mean,sigma])
+        a,mean,sigma   = np.max(y),np.mean(x), np.std(x)
+        print 'Seeds %s,%s ' %(mean,sigma)
+        popt,pcov = curve_fit(gaus,x,y,p0=[a,mean,40])
         mean,sigma = popt[1],popt[2]
         x_.append(bin_midpoint)
+        print mean,sigma,bin_midpoint
         y_.append(mean)
         z_.append(sigma)
         plt.plot(x,y,'b+:',label='data')
