@@ -9,24 +9,52 @@ from pymongo import MongoClient
 from copy import copy
 
 
-n_merged,n_unmerged,normed,max_sep,min_eng,max_eng  = 2500,2500,1,10,2000,4000
+n_merged,n_unmerged,normed,max_sep,min_eng,max_eng  = 500000,500000,0,20,2000,4000
 ##Load up specified number of events from MongoDB
 client      = MongoClient()
 db          = client['hgcal']
 
 if n_merged == -1:
-    db_merged   = db.merged.find()
+    db_merged   = db.ele_gamma_finer.find(no_cursor_timeout=True).batch_size(10)
 else:
-    db_merged   = db.merged.find().limit(n_merged)
+    db_merged   = db.ele_gamma_finer.find(no_cursor_timeout=True).limit(n_merged)
 
 if n_unmerged == -1:
-    db_unmerged = db.unmerged.find()
+    db_unmerged = db.electrons_finer.find(no_cursor_timeout=True).batch_size(10)
 else:
-    db_unmerged = db.unmerged.find().limit(n_unmerged)
+    db_unmerged = db.electrons_finer.find(no_cursor_timeout=True).limit(n_unmerged)
 
-merged_evts,unmerged_evts = u.load_event_array(db_merged,db_unmerged)
+merged_evts,unmerged_evts =  u.prep_bdt(u.load_event_array(db_merged),True), u.prep_bdt(u.load_event_array(db_unmerged),False)
 
 
+'''
+
+
+n_merged,n_unmerged,normed,max_sep,min_eng,max_eng  = 10000,10000,0,20,2000,4000
+##Load up specified number of events from MongoDB
+client      = MongoClient()
+db          = client['hgcal']
+
+if n_merged == -1:
+    db_merged   = db.ele_gamma.find(no_cursor_timeout=True).batch_size(10)
+else:
+    db_merged   = db.ele_gamma.find(no_cursor_timeout=True).limit(n_merged)
+
+if n_unmerged == -1:
+    db_unmerged = db.electrons.find(no_cursor_timeout=True).batch_size(10)
+else:
+    db_unmerged = db.electrons.find(no_cursor_timeout=True).limit(n_unmerged)
+
+merged_evts,unmerged_evts = u.prep_bdt(u.load_event_array(db_merged)),u.prep_bdt(u.load_event_array(db_unmerged),True)
+
+for id,event in enumerate(db_merged):
+    print (event)
+
+
+print len(merged_evts),len(unmerged_evts),u.load_event_array(db_merged)
+
+
+'''
 
 ##Build the important quantities up.
 separation                          = copy(merged_evts[:,0])
@@ -49,7 +77,7 @@ for data_t,data_v in folds:
     d_train,d_test     = xgb.DMatrix(t_vars,  label = t_target),xgb.DMatrix(v_vars,  label = v_target)
 
 
-    param_1,num_round  = {'max_depth':3,'eta':.2, 'silent':1,'objective':'binary:logistic','eval_metric':'auc','nthread':4},250
+    param_1,num_round  = {'max_depth':3,'eta':.1, 'silent':1,'objective':'binary:logistic','eval_metric':'auc','nthread':6},300
     bst_1              = xgb.train(param_1,d_train,num_round)
     preds_1            = bst_1.predict(d_test)
 
@@ -78,8 +106,8 @@ eng_total_bkg   = eng_total_bkg[[id for id,x in enumerate(sep_total_bkg) if x < 
 sep_total_bkg   = np.array([x for x in sep_total_bkg if x < max_sep])
 
 
-u.plot_weighted_2d(sep_total_bkg,eng_total_bkg,weights_bkg,cut_,50,'../output/plots/eff2.png')
-u.plot_weighted_2d(sep_total_bkg,eng_total_bkg,weights_bkg,cut_,10,'../output/plots/eff.png')
+u.plot_weighted_2d(sep_total_bkg,eng_total_bkg,weights_bkg,cut_,50,'../output/plots/eff2')
+u.plot_weighted_2d(sep_total_bkg,eng_total_bkg,weights_bkg,cut_,10,'../output/plots/eff')
 
 x_titles = ['Number of Hits'                      ,'Energy Deposited',  'Max Layer Depth',
             '68 % Containment Radius (Layers 3-7)','90 %Containment Radius (Layers 3-7)',
