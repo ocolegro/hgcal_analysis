@@ -19,7 +19,11 @@ SKLearn: http://scikit-learn.org/stable/
 Workflow --
 
 Step 1-- Use Geant4 and target_event_generator to create target ntuples.
+
 Step 2-- Use Geant4 and PFCAL (https://github.com/pfs/PFCal) to generate HGCAL events.  (My personal modifications to this repository will be included here shortly).
+
 Step 3-- Copy files locally
+
 Step 4-- Convert files to MongoDB
+
 Step 5-- Carry out analysis
