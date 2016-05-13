@@ -5,6 +5,9 @@ import pickle as pkl
 from sklearn.metrics import roc_curve, auc
 from decimal import Decimal
 from multiprocessing import Pool
+from sklearn.cluster import DBSCAN
+from collections import Counter
+from sklearn.preprocessing import StandardScaler
 
 def weights(x):
         '''
@@ -130,58 +133,65 @@ def prep_smear(e_,bkg = False,pdgids = [11.]):
 def prep_mask(p_,e_,n_events):
     p_keys,e_keys    = p_.keys(),e_.keys()
     wgt        = np.vectorize(u.weights)
-    #dr_counter = np.array([[0,2.5],[0,5.],[0,7.5],[0,10.],[0,12.5],[0,15.],[0,17.5],[0,20.]])
-    counter = 0
+    dr_counter = np.array([[0,2.5],[0,5.],[0,7.5],[0,10.],[0,12.5],[0,15.],[0,17.5],[0,20.]])
     ret     = []
-    breaker = False
+    mini_counter = 10
+    breaker,breaker_2 = False,False
+    print 'Loading n_events = %s' %(n_events)
     for pkey in p_keys:
-        mini_counter = 0
+        counter = 0
         for key_2 in p_[pkey].keys(): p_[pkey][key_2] = np.array(p_[pkey][key_2])
-        if breaker:
+        breaker = False
+        if breaker_2:
+            print 'Breaker 2 triggered'
             break
         np.random.shuffle(e_keys)
         for ekey in e_keys:
+            if ekey == pkey:continue
+
             if len(e_[ekey].keys()) != 23: continue
             if len(p_[pkey].keys()) != 23: continue
+            if len(e_[ekey]['gen_pdgid']) != 1: continue
+            if len(p_[ekey]['gen_pdgid']) != 1: continue
 
             if e_[ekey]['gen_pdgid'][0] != 11.: continue
-            if p_[pkey]['gen_pdgid'][0] != 22.: continue
+            if p_[pkey]['gen_pdgid'][0] != 11.: continue
 
             for key_2 in e_[ekey].keys(): e_[ekey][key_2] = np.array(e_[ekey][key_2])
 
 
             dr =  np.sqrt( np.power(e_[ekey]['gen_xpos'][0]-p_[pkey]['gen_xpos'][0],2) + np.power(e_[ekey]['gen_ypos'][0]-p_[pkey]['gen_ypos'][0],2))
-            '''
+
             if dr > np.max(dr_counter[:,1]): continue
             id_x = np.searchsorted(dr_counter[:,1],dr)
             if dr_counter[:,0][id_x] > n_events/len(dr_counter) : continue
             dr_counter[:,0][id_x] = dr_counter[:,0][id_x]+1
-            if np.sum(dr_counter[:,0]) >= n_events:
-            '''
-            counter = counter + 1
-            if counter > n_events:
-                breaker = True
+            if np.sum(dr_counter[:,0]) >= n_events: breaker_2 = True;
+
 
             p_xvtx,p_yvtx,p_zvtx =  p_[pkey]['reco_xpos'],p_[pkey]['reco_ypos'],p_[pkey]['reco_zpos']
             ele_cords            =  [ [e_[ekey]['reco_xpos'][i],e_[ekey]['reco_ypos'][i],e_[ekey]['reco_zpos'][i]] for i in range(len(e_[ekey]['reco_xpos'])) ]
             inds = np.array([([p_xvtx[i],p_yvtx[i],p_zvtx[i]] not in ele_cords) for i in range(len(p_xvtx)) ])
-
             layers,hit_engs = p_[pkey]['reco_layer'],p_[pkey]['reco_energy']
+            if len(layers[inds]) != len(hit_engs[inds]):continue
+            if len(layers[inds]) == 0: continue
+            counter = counter + 1
+            if counter > mini_counter:
+                break
             gen_eng         = p_[pkey]['gen_pz'][0]
             eng_dot         = np.dot(wgt(layers),hit_engs)
             eng_masked      = np.dot(wgt(layers[inds]),hit_engs[inds])
             ret.append( [dr,np.sum(inds)/float(len(inds)),(eng_dot - eng_masked)/eng_masked,gen_eng] )
-            mini_counter = mini_counter + 1
-            if mini_counter > 100:
-                break
+
+    print len(ret)
     ret = np.array(ret)
     ret = ret[np.argsort(ret[:,0])]
-    pkl.dump({'energy_mask':ret},open('../output/pkl/photon_ele_mask_uneven.pkl','wb') )
+    pkl.dump({'energy_mask':ret},open('../output/pkl/photon_ele_mask_bettergran.pkl','wb') )
 
     return ret
 
 
-def prep_bdt(e_,bkg = False):
+def prep_bdt(e_,bkg = False,do_scan = False):
     keys    = e_.keys()
     wgt     = np.vectorize(u.weights)
     ret     = []
@@ -200,21 +210,20 @@ def prep_bdt(e_,bkg = False):
                 continue
             if e_[key]['gen_pdgid'] != [11.] :
                 continue
-            if e_[key]['gen_pz'][0] < 3900:
-                continue
-            if e_[key]['gen_pz'][0] > 4100: continue
-
-        if np.max(np.abs(e_[key]['reco_xpos'])) > 100: continue
-        if np.max(np.abs(e_[key]['reco_ypos'])) > 100: continue
+            #if e_[key]['gen_pz'][0] < 3900:
+            #    continue
+            #if e_[key]['gen_pz'][0] > 4100: continue
+        X_,Y_,Z_ = np.array(e_[key]['reco_xpos']),np.array(e_[key]['reco_ypos']),np.array(e_[key]['reco_zpos'])
+        if np.max(np.abs(X_)) > 100: continue
+        if np.max(np.abs(Y_)) > 100: continue
 
         lay_s,eng_s = e_[key]['reco_layer'],e_[key]['reco_energy']
         len_s       = len(lay_s)
 
         eng_dot       = np.dot(wgt(lay_s),eng_s)
         if eng_dot != eng_dot:continue
-        x_s,y_s     = e_[key]['reco_xpos'],e_[key]['reco_ypos']
 
-        if len(x_s) != len(y_s): continue
+        if len(X_) != len(Y_): continue
         min_s,max_s = np.min(lay_s),np.max(lay_s)
         if min_s == 0: min_s = 1
         range_s = min_s-max_s
@@ -229,19 +238,55 @@ def prep_bdt(e_,bkg = False):
         for line in range(3,28):
         #for line in range(3,28):
             try:
-                mol1,mol2 = u.calc_cont_r(x_s,y_s,eng_s,lay_s,1,line)
+                mol1,mol2 = u.calc_cont_r(X_,Y_,eng_s,lay_s,1,line)
             except:
                 mol1,mol2 = 0,0
             mol_s1.append(mol1);mol_s2.append(mol2);
+        if do_scan:
+            w           = wgt(lay_s)*eng_s
+            R_Z_        = np.c_[X_,Y_,Z_]
+            R_          = np.c_[X_,Y_]
+            label       = DBSCAN(eps=1.0, min_samples=10).fit_predict(StandardScaler().fit_transform(R_Z_),w)
+            try:
+                counted     = Counter(label).most_common(2)
+                id_1,id_2   = counted[0][0],counted[1][0]
+                wT_1 = np.array([w[label == id_1],w[label == id_1]]).T
+                wT_2 = np.array([w[label == id_2],w[label == id_2]]).T
+
+                before_t =np.mean(np.sqrt(np.power((R_[label == id_1][:,[0,1]]*wT_1),2))) +\
+                         np.mean(np.sqrt(np.power((R_[label == id_2][:,[0,1]]*wT_2),2)))
+
+                cent_1,cent_2 = [np.mean(R_[label == id_1][:,0]),np.mean(R_[label == id_1][:,1])],\
+                                [np.mean(R_[label == id_2][:,0]),np.mean(R_[label == id_2][:,1])]
+
+                after_t  =np.mean(np.sqrt(np.power((R_[label == id_1][:,[0,1]] - cent_1)*wT_1,2))) +\
+                         np.mean(np.sqrt(np.power((R_[label == id_2][:,[0,1]] - cent_2)*wT_2,2)))
+
+
+                before_t2 =np.mean(np.sqrt(np.power((R_[label == id_1][:,[0,1]]),2))) +\
+                         np.mean(np.sqrt(np.power((R_[label == id_2][:,[0,1]]),2)))
+
+                after_t2  =np.mean(np.sqrt(np.power((R_[label == id_1][:,[0,1]] - cent_1),2))) +\
+                            np.mean(np.sqrt(np.power((R_[label == id_2][:,[0,1]] - cent_2),2)))
+                wgted_cent_1,wgted_cent_2 = [np.mean(R_[label == id_1][:,0]*w[label == id_1]),np.mean(R_[label == id_1][:,1]*w[label == id_1])],\
+                                [np.mean(R_[label == id_2][:,0]*w[label == id_2]),np.mean(R_[label == id_2][:,1]*w[label == id_2])]
+
+                pts_1,pts_2,len_,cent_  = before_t/after_t,before_t2/after_t2,np.sum([label == id_1])/np.sum([label == id_2]),\
+                                            np.sum(np.power((np.array(wgted_cent_1)-np.array(wgted_cent_2)),2))
+            except:
+                pts_1,pts_2,len_,cent_ = np.nan,np.nan,np.nan,np.nan
+                print 'Failure occured'
+        else:
+            pts_1,pts_2,len_,cent_ = [],[],[],[]
 
         if bkg == False:
             #vars_s        = [1,-10000,len_s,eng_dot,mol_s1[1],mol_s1[-1],mol_s2[1],mol_s2[-1],np.append(frac_hit_s,frac_eng_s),range_s,max_s,min_s]
-            vars_s        = [1,-10000,len_s,eng_dot,mol_s1,mol_s2,np.append(frac_hit_s,frac_eng_s),range_s,max_s,min_s]
+            vars_s        = [1,-10000,len_s,eng_dot,mol_s1,mol_s2,np.append(frac_hit_s,frac_eng_s),range_s,max_s,min_s,pts_1,pts_2,len_]
 
         else:
             separation    = np.sqrt( np.power(e_[key]['gen_xpos'][0]-e_[key]['gen_xpos'][1],2) + np.power(e_[key]['gen_ypos'][0]-e_[key]['gen_ypos'][1],2))
             eng           = e_[key]['gen_pz'][np.array(e_[key]['gen_pdgid'])==22.][0]
-            vars_s        = [separation,eng,len_s,eng_dot,mol_s1,mol_s2,np.append(frac_hit_s,frac_eng_s),range_s,max_s,min_s]
+            vars_s        = [separation,eng,len_s,eng_dot,mol_s1,mol_s2,np.append(frac_hit_s,frac_eng_s),range_s,max_s,min_s,pts_1,pts_2,len_]
 
         vars_s = np.hstack(vars_s)
         ret.append(vars_s);
