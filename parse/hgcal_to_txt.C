@@ -34,9 +34,9 @@ bool exists (const std::string& name) {
   return (stat (name.c_str(), &buffer) == 0);
 }
 
-void root_to_txt()
+void hgcal_to_txt()
 {
-  TString prefix     = "../data/root_files/unmerged/DigiIC3_Si2__version30_model0_BOFF_et";
+  TString prefix     = "../data/root_files/merged_lowergran/DigiIC3_Si2__version30_model0_BOFF_et";
   //TString prefix     = "../data/root_files/electron_2/DigiIC3_Si2__version30_model0_BOFF_et";
 
 //  TString process    = "gamma_";
@@ -69,7 +69,7 @@ void root_to_txt()
 		continue;
 	}
 	    try{
-        freopen( "../data/unmerged_files/" + out_file, "w", stdout );
+        freopen( "../data/merged_files_lowergran/" + out_file, "w", stdout );
         //freopen( "../data/unmerged_txts/" + out_file, "w", stdout );
 
         cerr << "The energy is "    << energy << "MEV" << std::endl;
