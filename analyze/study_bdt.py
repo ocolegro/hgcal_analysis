@@ -1,6 +1,6 @@
 import sys
 sys.path.insert(0,"../")
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import StandardScaler,Imputer
 from sklearn.cross_validation import StratifiedKFold
 import xgboost as xgb
 import numpy as np
@@ -9,11 +9,14 @@ from pymongo import MongoClient
 from copy import copy
 
 
-n_merged,n_unmerged,normed,max_sep,min_eng,max_eng  = 500000,500000,0,20,2000,4000
+n_merged,n_unmerged,normed,max_sep,min_eng,max_eng  = 300000,300000,1,20,2000,4000
 ##Load up specified number of events from MongoDB
 client      = MongoClient()
 db          = client['hgcal']
 
+#high granularity database names (cell side length of 6.5/sqrt(2))
+
+'''
 if n_merged == -1:
     db_merged   = db.ele_gamma_finer.find(no_cursor_timeout=True).batch_size(10)
 else:
@@ -23,38 +26,25 @@ if n_unmerged == -1:
     db_unmerged = db.electrons_finer.find(no_cursor_timeout=True).batch_size(10)
 else:
     db_unmerged = db.electrons_finer.find(no_cursor_timeout=True).limit(n_unmerged)
-
-merged_evts,unmerged_evts =  u.prep_bdt(u.load_event_array(db_merged),True), u.prep_bdt(u.load_event_array(db_unmerged),False)
-
-
 '''
 
-
-n_merged,n_unmerged,normed,max_sep,min_eng,max_eng  = 10000,10000,0,20,2000,4000
-##Load up specified number of events from MongoDB
-client      = MongoClient()
-db          = client['hgcal']
 
 if n_merged == -1:
-    db_merged   = db.ele_gamma.find(no_cursor_timeout=True).batch_size(10)
+    db_merged   = db.ele_gamma_lowgran.find(no_cursor_timeout=True).batch_size(10)
 else:
-    db_merged   = db.ele_gamma.find(no_cursor_timeout=True).limit(n_merged)
+    db_merged   = db.ele_gamma_lowgran.find(no_cursor_timeout=True).limit(n_merged)
 
 if n_unmerged == -1:
-    db_unmerged = db.electrons.find(no_cursor_timeout=True).batch_size(10)
+    db_unmerged = db.electrons_lowgran.find(no_cursor_timeout=True).batch_size(10)
 else:
-    db_unmerged = db.electrons.find(no_cursor_timeout=True).limit(n_unmerged)
-
-merged_evts,unmerged_evts = u.prep_bdt(u.load_event_array(db_merged)),u.prep_bdt(u.load_event_array(db_unmerged),True)
-
-for id,event in enumerate(db_merged):
-    print (event)
+    db_unmerged = db.electrons_lowgran.find(no_cursor_timeout=True).limit(n_unmerged)
 
 
-print len(merged_evts),len(unmerged_evts),u.load_event_array(db_merged)
+merged_evts,unmerged_evts =  u.prep_bdt(u.load_event_array(db_merged),True,False), u.prep_bdt(u.load_event_array(db_unmerged),False,False)
 
+print merged_evts.shape
 
-'''
+print unmerged_evts.shape
 
 ##Build the important quantities up.
 separation                          = copy(merged_evts[:,0])
@@ -63,9 +53,10 @@ data,separation                     = np.vstack((unmerged_evts,merged_evts)),np.
 
 ##Scaling helps the learner
 if normed == True:
-    data[:,range(2,len(unmerged_evts[0]))] = StandardScaler().fit_transform(copy(data[:,range(2,len(unmerged_evts[0]))]))
-
-
+    data[:,range(2,len(unmerged_evts[0]))] = StandardScaler().fit_transform(
+        Imputer(missing_values=np.nan).fit_transform(copy(data[:,range(2,len(unmerged_evts[0]))])))
+else:
+    data[:,range(2,len(unmerged_evts[0]))] =    Imputer(missing_values=np.nan).fit_transform(copy(data[:,range(2,len(unmerged_evts[0]))]))
 ##Begin Stratified CV, I suggest you look into Sklearn's documentation to understand how this yields more statistics~
 folds = StratifiedKFold(data[:,0], n_folds=2, shuffle=True, random_state=1)
 counter = 0
@@ -106,8 +97,8 @@ eng_total_bkg   = eng_total_bkg[[id for id,x in enumerate(sep_total_bkg) if x < 
 sep_total_bkg   = np.array([x for x in sep_total_bkg if x < max_sep])
 
 
-u.plot_weighted_2d(sep_total_bkg,eng_total_bkg,weights_bkg,cut_,50,'../output/plots/eff2')
-u.plot_weighted_2d(sep_total_bkg,eng_total_bkg,weights_bkg,cut_,10,'../output/plots/eff')
+u.plot_weighted_2d(sep_total_bkg,eng_total_bkg,weights_bkg,cut_,50,'../output/plots/eff2_full_low_gran_normed')
+u.plot_weighted_2d(sep_total_bkg,eng_total_bkg,weights_bkg,cut_,10,'../output/plots/eff_full_low_gran_normed')
 
 x_titles = ['Number of Hits'                      ,'Energy Deposited',  'Max Layer Depth',
             '68 % Containment Radius (Layers 3-7)','90 %Containment Radius (Layers 3-7)',
