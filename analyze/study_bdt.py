@@ -9,7 +9,7 @@ from pymongo import MongoClient
 from copy import copy
 
 
-n_merged,n_unmerged,normed,max_sep,min_eng,max_eng  = 300000,300000,1,20,2000,4000
+n_merged,n_unmerged,normed,max_sep,min_eng,max_eng  = 300000,300000,0,20,2000,4000
 ##Load up specified number of events from MongoDB
 client      = MongoClient()
 db          = client['hgcal']
@@ -57,6 +57,7 @@ if normed == True:
         Imputer(missing_values=np.nan).fit_transform(copy(data[:,range(2,len(unmerged_evts[0]))])))
 else:
     data[:,range(2,len(unmerged_evts[0]))] =    Imputer(missing_values=np.nan).fit_transform(copy(data[:,range(2,len(unmerged_evts[0]))]))
+
 ##Begin Stratified CV, I suggest you look into Sklearn's documentation to understand how this yields more statistics~
 folds = StratifiedKFold(data[:,0], n_folds=2, shuffle=True, random_state=1)
 counter = 0
@@ -68,7 +69,7 @@ for data_t,data_v in folds:
     d_train,d_test     = xgb.DMatrix(t_vars,  label = t_target),xgb.DMatrix(v_vars,  label = v_target)
 
 
-    param_1,num_round  = {'max_depth':3,'eta':.1, 'silent':1,'objective':'binary:logistic','eval_metric':'auc','nthread':6},300
+    param_1,num_round  = {'max_depth':6,'eta':.1, 'silent':1,'objective':'binary:logistic','eval_metric':'auc','nthread':6},300
     bst_1              = xgb.train(param_1,d_train,num_round)
     preds_1            = bst_1.predict(d_test)
 
@@ -97,8 +98,8 @@ eng_total_bkg   = eng_total_bkg[[id for id,x in enumerate(sep_total_bkg) if x < 
 sep_total_bkg   = np.array([x for x in sep_total_bkg if x < max_sep])
 
 
-u.plot_weighted_2d(sep_total_bkg,eng_total_bkg,weights_bkg,cut_,50,'../output/plots/eff2_full_low_gran_normed')
-u.plot_weighted_2d(sep_total_bkg,eng_total_bkg,weights_bkg,cut_,10,'../output/plots/eff_full_low_gran_normed')
+u.plot_weighted_2d(sep_total_bkg,eng_total_bkg,weights_bkg,cut_,50,'../output/plots/eff2_full_low_gran')
+u.plot_weighted_2d(sep_total_bkg,eng_total_bkg,weights_bkg,cut_,10,'../output/plots/eff_full_low_gran')
 
 x_titles = ['Number of Hits'                      ,'Energy Deposited',  'Max Layer Depth',
             '68 % Containment Radius (Layers 3-7)','90 %Containment Radius (Layers 3-7)',
