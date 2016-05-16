@@ -183,7 +183,7 @@ def prep_mask(p_,e_,n_events):
             eng_masked      = np.dot(wgt(layers[inds]),hit_engs[inds])
             ret.append( [dr,np.sum(inds)/float(len(inds)),(eng_dot - eng_masked)/eng_masked,gen_eng] )
 
-    print len(ret)
+            print len(ret)
     ret = np.array(ret)
     ret = ret[np.argsort(ret[:,0])]
     pkl.dump({'energy_mask':ret},open('../output/pkl/photon_ele_mask_bettergran.pkl','wb') )
@@ -210,9 +210,6 @@ def prep_bdt(e_,bkg = False,do_scan = False):
                 continue
             if e_[key]['gen_pdgid'] != [11.] :
                 continue
-            #if e_[key]['gen_pz'][0] < 3900:
-            #    continue
-            #if e_[key]['gen_pz'][0] > 4100: continue
         X_,Y_,Z_ = np.array(e_[key]['reco_xpos']),np.array(e_[key]['reco_ypos']),np.array(e_[key]['reco_zpos'])
         if np.max(np.abs(X_)) > 100: continue
         if np.max(np.abs(Y_)) > 100: continue
@@ -236,7 +233,6 @@ def prep_bdt(e_,bkg = False,do_scan = False):
 
         mol_s1,mol_s2       = [],[]
         for line in range(3,28):
-        #for line in range(3,28):
             try:
                 mol1,mol2 = u.calc_cont_r(X_,Y_,eng_s,lay_s,1,line)
             except:
@@ -381,7 +377,6 @@ def plot_weighted_2d(x,y,weights,disc,nbins,f_out):
     # Estimate the 2D histogram
 
     H1, xedges, yedges = np.histogram2d(x,y,bins=nbins)
-    print 'The shap of h1 is ' + str( H1.shape)
     H, xedges, yedges = np.histogram2d(x,y,bins=nbins,weights = weights)
     H1[H==0],H[H==0] = 1,1
 
@@ -401,7 +396,7 @@ def plot_weighted_2d(x,y,weights,disc,nbins,f_out):
 
     plt.xlabel('$\\Delta$ R(e-$\\gamma$)',fontsize = 20)
     plt.ylabel('$\\gamma$ Energy in MeV',fontsize = 20)
-    plt.title('$\\epsilon$(disc < %s),%s Signal Events' %(disc,len(x)),fontsize=20)
+    plt.title('$\\epsilon$(disc > %.2f),NEvents = %.2E' %(disc,len(x)),fontsize=20,loc='left')
     cbar = plt.colorbar()
     cbar.ax.set_ylabel('Counts')
     plt.savefig('%s.png' %(f_out))
