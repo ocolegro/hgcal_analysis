@@ -9,7 +9,7 @@ from pymongo import MongoClient
 from copy import copy
 
 
-n_train,n_chunk,chunk_size,normed,max_sep,min_eng,max_eng  = 100000,10,100000,0,20,2000,4000
+n_train,n_chunk,chunk_size,normed,max_sep,min_eng,max_eng  = 100000,20,100000,0,20,2000,4000
 ##Load up specified number of events from MongoDB
 client          = MongoClient()
 db              = client['hgcal']
