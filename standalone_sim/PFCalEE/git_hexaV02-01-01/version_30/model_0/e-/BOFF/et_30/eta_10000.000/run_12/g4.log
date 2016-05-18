@@ -1,0 +1,2117 @@
+ -- G4VIS_USE is set 
+
+*************************************************************
+ Geant4 version Name: geant4-09-06-patch-02    (17-May-2013)
+                      Copyright : Geant4 Collaboration
+                      Reference : NIM A 506 (2003), 250-303
+                            WWW : http://cern.ch/geant4
+*************************************************************
+
+-- Running version 30 model 0
+ -- Setting W thick to 1.75,1.75,1.75,1.75,1.75,2.8,2.8,2.8,2.8,2.8,4.2,4.2,4.2,4.2,4.2
+1.75 1.75 1.75 1.75 1.75 2.8 2.8 2.8 2.8 2.8 4.2 4.2 4.2 4.2 4.2 
+ -- Setting Pb thick to 1,1,1,1,1,2.1,2.1,2.1,2.1,2.1,4.4,4.4,4.4,4.4
+1 1 1 1 1 2.1 2.1 2.1 2.1 2.1 4.4 4.4 4.4 4.4 
+[DetectorConstruction] starting v_HGCALEE_v6
+ -- End of sampling section initialisation. Input 11 elements, constructing 11 elements with 3 sensitive elements.
+ -- End of sampling section initialisation. Input 9 elements, constructing 9 elements with 3 sensitive elements.
+ -- End of sampling section initialisation. Input 11 elements, constructing 11 elements with 3 sensitive elements.
+ -- End of sampling section initialisation. Input 9 elements, constructing 9 elements with 3 sensitive elements.
+ -- End of sampling section initialisation. Input 11 elements, constructing 11 elements with 3 sensitive elements.
+ -- End of sampling section initialisation. Input 9 elements, constructing 9 elements with 3 sensitive elements.
+ -- End of sampling section initialisation. Input 11 elements, constructing 11 elements with 3 sensitive elements.
+ -- End of sampling section initialisation. Input 9 elements, constructing 9 elements with 3 sensitive elements.
+ -- End of sampling section initialisation. Input 11 elements, constructing 11 elements with 3 sensitive elements.
+ -- End of sampling section initialisation. Input 9 elements, constructing 9 elements with 3 sensitive elements.
+ -- End of sampling section initialisation. Input 11 elements, constructing 11 elements with 3 sensitive elements.
+ -- End of sampling section initialisation. Input 9 elements, constructing 9 elements with 3 sensitive elements.
+ -- End of sampling section initialisation. Input 11 elements, constructing 11 elements with 3 sensitive elements.
+ -- End of sampling section initialisation. Input 9 elements, constructing 9 elements with 3 sensitive elements.
+ -- End of sampling section initialisation. Input 11 elements, constructing 11 elements with 3 sensitive elements.
+ -- End of sampling section initialisation. Input 9 elements, constructing 9 elements with 3 sensitive elements.
+ -- End of sampling section initialisation. Input 11 elements, constructing 11 elements with 3 sensitive elements.
+ -- End of sampling section initialisation. Input 9 elements, constructing 9 elements with 3 sensitive elements.
+ -- End of sampling section initialisation. Input 11 elements, constructing 11 elements with 3 sensitive elements.
+ -- End of sampling section initialisation. Input 9 elements, constructing 9 elements with 3 sensitive elements.
+ -- End of sampling section initialisation. Input 11 elements, constructing 11 elements with 3 sensitive elements.
+ -- End of sampling section initialisation. Input 9 elements, constructing 9 elements with 3 sensitive elements.
+ -- End of sampling section initialisation. Input 11 elements, constructing 11 elements with 3 sensitive elements.
+ -- End of sampling section initialisation. Input 9 elements, constructing 9 elements with 3 sensitive elements.
+ -- End of sampling section initialisation. Input 11 elements, constructing 11 elements with 3 sensitive elements.
+ -- End of sampling section initialisation. Input 9 elements, constructing 9 elements with 3 sensitive elements.
+ Material: Scintillator    density:  1.032 g/cm3   RadL:  42.538 cm   Nucl.Int.Length:  70.134 cm   Imean:  64.749 eV 
+   --->  Element: C (C)   Z =  6.0   N =  12.0   A =  12.01 g/mole
+         --->  Isotope:   C12   Z =  6   N =  12   A =  12.00 g/mole   abundance:  98.93 %
+         --->  Isotope:   C13   Z =  6   N =  13   A =  13.00 g/mole   abundance:   1.07 %
+          ElmMassFraction:  91.51 %  ElmAbundance  47.50 % 
+
+   --->  Element: H (H)   Z =  1.0   N =   1.0   A =   1.01 g/mole
+         --->  Isotope:    H1   Z =  1   N =   1   A =   1.01 g/mole   abundance:  99.99 %
+         --->  Isotope:    H2   Z =  1   N =   2   A =   2.01 g/mole   abundance:   0.01 %
+          ElmMassFraction:   8.49 %  ElmAbundance  52.50 % 
+
+[DetectorConstruction][UpdateCalorSize] Z x XY = 445 x 200 mm , nsectors = 1
+<<< Geant4 Physics List simulation engine: QGSP_BERT 4.0
+
+ -- Gun position set to: 0,0,-244.75
+ -- check Info: version = 30 model = 0
+ -- Initialising HoneyComb with parameters: 
+ ---- (xstart,ystart) = (-98.7624,-87.5198), side = 4.5936, nx = 25, ny=22
+ -- Check geomMap: size = 538
+ -- Initialising squareMap with parameters: 
+ ---- xymin = -200, side = 10, nx = 40, ny=40
+ -- Check geomMap: size = 1600
+m_WorldSizeXY = 220, m_WorldSizeZ = 489.5
+************ Cu layer 0 dEdx=1.257 X0=14.3558 L0=155.141 zpos=0mm w=0.5mm TotX0=0.0348292 TotLambda=0.00322288
+************ CFMix layer 0 dEdx=0 X0=498.277 L0=909.149 zpos=0.5mm w=0.5mm TotX0=0.0358326 TotLambda=0.00377284
+************ W layer 0 dEdx=2.21 X0=3.50418 L0=103.057 zpos=1mm w=2mm TotX0=0.60658 TotLambda=0.0231796
+************ Steel layer 0 dEdx=1.14059 X0=17.6176 L0=169.474 zpos=3mm w=6mm TotX0=0.947148 TotLambda=0.0585834
+************ CFMix layer 0 dEdx=0 X0=498.277 L0=909.149 zpos=9mm w=0.5mm TotX0=0.948151 TotLambda=0.0591333
+************ Cu layer 0 dEdx=1.257 X0=14.3558 L0=155.141 zpos=9.5mm w=0.5mm TotX0=0.98298 TotLambda=0.0623562
+************ Air layer 0 dEdx=0 X0=303921 L0=710261 zpos=10mm w=2mm TotX0=0.982987 TotLambda=0.062359
+************ PCB layer 0 dEdx=0 X0=175.049 L0=484.239 zpos=12mm w=2mm TotX0=0.994412 TotLambda=0.0664892
+************ Si layer 0 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=14mm w=0.1mm TotX0=0.99548 TotLambda=0.0667078
+************ Si layer 0 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=14.1mm w=0.1mm TotX0=0.996548 TotLambda=0.0669263
+************ Si layer 0 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=14.2mm w=0.1mm TotX0=0.997615 TotLambda=0.0671449
+************ WCu layer 1 dEdx=1.97175 X0=5.1223 L0=119.873 zpos=14.3mm w=0.6mm TotX0=1.11475 TotLambda=0.0721502
+************ Cu layer 1 dEdx=1.257 X0=14.3558 L0=155.141 zpos=14.9mm w=6mm TotX0=1.5327 TotLambda=0.110825
+************ WCu layer 1 dEdx=1.97175 X0=5.1223 L0=119.873 zpos=20.9mm w=0.6mm TotX0=1.64984 TotLambda=0.11583
+************ Steel layer 1 dEdx=1.14059 X0=17.6176 L0=169.474 zpos=21.5mm w=6mm TotX0=1.9904 TotLambda=0.151234
+************ Si layer 1 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=27.5mm w=0.1mm TotX0=1.99147 TotLambda=0.151452
+************ Si layer 1 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=27.6mm w=0.1mm TotX0=1.99254 TotLambda=0.151671
+************ Si layer 1 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=27.7mm w=0.1mm TotX0=1.99361 TotLambda=0.151889
+************ PCB layer 1 dEdx=0 X0=175.049 L0=484.239 zpos=27.8mm w=2mm TotX0=2.00503 TotLambda=0.15602
+************ Air layer 1 dEdx=0 X0=303921 L0=710261 zpos=29.8mm w=2mm TotX0=2.00504 TotLambda=0.156022
+************ Cu layer 2 dEdx=1.257 X0=14.3558 L0=155.141 zpos=31.8mm w=0.5mm TotX0=2.03987 TotLambda=0.159245
+************ CFMix layer 2 dEdx=0 X0=498.277 L0=909.149 zpos=32.3mm w=0.5mm TotX0=2.04087 TotLambda=0.159795
+************ W layer 2 dEdx=2.21 X0=3.50418 L0=103.057 zpos=32.8mm w=2mm TotX0=2.61162 TotLambda=0.179202
+************ Steel layer 2 dEdx=1.14059 X0=17.6176 L0=169.474 zpos=34.8mm w=6mm TotX0=2.95219 TotLambda=0.214606
+************ CFMix layer 2 dEdx=0 X0=498.277 L0=909.149 zpos=40.8mm w=0.5mm TotX0=2.95319 TotLambda=0.215156
+************ Cu layer 2 dEdx=1.257 X0=14.3558 L0=155.141 zpos=41.3mm w=0.5mm TotX0=2.98802 TotLambda=0.218379
+************ Air layer 2 dEdx=0 X0=303921 L0=710261 zpos=41.8mm w=2mm TotX0=2.98803 TotLambda=0.218381
+************ PCB layer 2 dEdx=0 X0=175.049 L0=484.239 zpos=43.8mm w=2mm TotX0=2.99945 TotLambda=0.222512
+************ Si layer 2 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=45.8mm w=0.1mm TotX0=3.00052 TotLambda=0.22273
+************ Si layer 2 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=45.9mm w=0.1mm TotX0=3.00159 TotLambda=0.222949
+************ Si layer 2 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=46mm w=0.1mm TotX0=3.00265 TotLambda=0.223167
+************ WCu layer 3 dEdx=1.97175 X0=5.1223 L0=119.873 zpos=46.1mm w=0.6mm TotX0=3.11979 TotLambda=0.228173
+************ Cu layer 3 dEdx=1.257 X0=14.3558 L0=155.141 zpos=46.7mm w=6mm TotX0=3.53774 TotLambda=0.266847
+************ WCu layer 3 dEdx=1.97175 X0=5.1223 L0=119.873 zpos=52.7mm w=0.6mm TotX0=3.65487 TotLambda=0.271853
+************ Steel layer 3 dEdx=1.14059 X0=17.6176 L0=169.474 zpos=53.3mm w=6mm TotX0=3.99544 TotLambda=0.307256
+************ Si layer 3 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=59.3mm w=0.1mm TotX0=3.99651 TotLambda=0.307475
+************ Si layer 3 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=59.4mm w=0.1mm TotX0=3.99758 TotLambda=0.307693
+************ Si layer 3 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=59.5mm w=0.1mm TotX0=3.99865 TotLambda=0.307912
+************ PCB layer 3 dEdx=0 X0=175.049 L0=484.239 zpos=59.6mm w=2mm TotX0=4.01007 TotLambda=0.312042
+************ Air layer 3 dEdx=0 X0=303921 L0=710261 zpos=61.6mm w=2mm TotX0=4.01008 TotLambda=0.312045
+************ Cu layer 4 dEdx=1.257 X0=14.3558 L0=155.141 zpos=63.6mm w=0.5mm TotX0=4.04491 TotLambda=0.315268
+************ CFMix layer 4 dEdx=0 X0=498.277 L0=909.149 zpos=64.1mm w=0.5mm TotX0=4.04591 TotLambda=0.315818
+************ W layer 4 dEdx=2.21 X0=3.50418 L0=103.057 zpos=64.6mm w=2mm TotX0=4.61666 TotLambda=0.335225
+************ Steel layer 4 dEdx=1.14059 X0=17.6176 L0=169.474 zpos=66.6mm w=6mm TotX0=4.95723 TotLambda=0.370628
+************ CFMix layer 4 dEdx=0 X0=498.277 L0=909.149 zpos=72.6mm w=0.5mm TotX0=4.95823 TotLambda=0.371178
+************ Cu layer 4 dEdx=1.257 X0=14.3558 L0=155.141 zpos=73.1mm w=0.5mm TotX0=4.99306 TotLambda=0.374401
+************ Air layer 4 dEdx=0 X0=303921 L0=710261 zpos=73.6mm w=2mm TotX0=4.99306 TotLambda=0.374404
+************ PCB layer 4 dEdx=0 X0=175.049 L0=484.239 zpos=75.6mm w=2mm TotX0=5.00449 TotLambda=0.378534
+************ Si layer 4 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=77.6mm w=0.1mm TotX0=5.00556 TotLambda=0.378753
+************ Si layer 4 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=77.7mm w=0.1mm TotX0=5.00662 TotLambda=0.378971
+************ Si layer 4 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=77.8mm w=0.1mm TotX0=5.00769 TotLambda=0.37919
+************ WCu layer 5 dEdx=1.97175 X0=5.1223 L0=119.873 zpos=77.9mm w=0.6mm TotX0=5.12483 TotLambda=0.384195
+************ Cu layer 5 dEdx=1.257 X0=14.3558 L0=155.141 zpos=78.5mm w=6mm TotX0=5.54278 TotLambda=0.42287
+************ WCu layer 5 dEdx=1.97175 X0=5.1223 L0=119.873 zpos=84.5mm w=0.6mm TotX0=5.65991 TotLambda=0.427875
+************ Steel layer 5 dEdx=1.14059 X0=17.6176 L0=169.474 zpos=85.1mm w=6mm TotX0=6.00048 TotLambda=0.463279
+************ Si layer 5 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=91.1mm w=0.1mm TotX0=6.00155 TotLambda=0.463497
+************ Si layer 5 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=91.2mm w=0.1mm TotX0=6.00262 TotLambda=0.463716
+************ Si layer 5 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=91.3mm w=0.1mm TotX0=6.00368 TotLambda=0.463934
+************ PCB layer 5 dEdx=0 X0=175.049 L0=484.239 zpos=91.4mm w=2mm TotX0=6.01511 TotLambda=0.468065
+************ Air layer 5 dEdx=0 X0=303921 L0=710261 zpos=93.4mm w=2mm TotX0=6.01512 TotLambda=0.468067
+************ Cu layer 6 dEdx=1.257 X0=14.3558 L0=155.141 zpos=95.4mm w=0.5mm TotX0=6.04994 TotLambda=0.47129
+************ CFMix layer 6 dEdx=0 X0=498.277 L0=909.149 zpos=95.9mm w=0.5mm TotX0=6.05095 TotLambda=0.47184
+************ W layer 6 dEdx=2.21 X0=3.50418 L0=103.057 zpos=96.4mm w=2mm TotX0=6.6217 TotLambda=0.491247
+************ Steel layer 6 dEdx=1.14059 X0=17.6176 L0=169.474 zpos=98.4mm w=6mm TotX0=6.96226 TotLambda=0.526651
+************ CFMix layer 6 dEdx=0 X0=498.277 L0=909.149 zpos=104.4mm w=0.5mm TotX0=6.96327 TotLambda=0.527201
+************ Cu layer 6 dEdx=1.257 X0=14.3558 L0=155.141 zpos=104.9mm w=0.5mm TotX0=6.9981 TotLambda=0.530424
+************ Air layer 6 dEdx=0 X0=303921 L0=710261 zpos=105.4mm w=2mm TotX0=6.9981 TotLambda=0.530426
+************ PCB layer 6 dEdx=0 X0=175.049 L0=484.239 zpos=107.4mm w=2mm TotX0=7.00953 TotLambda=0.534557
+************ Si layer 6 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=109.4mm w=0.1mm TotX0=7.0106 TotLambda=0.534775
+************ Si layer 6 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=109.5mm w=0.1mm TotX0=7.01166 TotLambda=0.534994
+************ Si layer 6 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=109.6mm w=0.1mm TotX0=7.01273 TotLambda=0.535212
+************ WCu layer 7 dEdx=1.97175 X0=5.1223 L0=119.873 zpos=109.7mm w=0.6mm TotX0=7.12987 TotLambda=0.540218
+************ Cu layer 7 dEdx=1.257 X0=14.3558 L0=155.141 zpos=110.3mm w=6mm TotX0=7.54782 TotLambda=0.578892
+************ WCu layer 7 dEdx=1.97175 X0=5.1223 L0=119.873 zpos=116.3mm w=0.6mm TotX0=7.66495 TotLambda=0.583897
+************ Steel layer 7 dEdx=1.14059 X0=17.6176 L0=169.474 zpos=116.9mm w=6mm TotX0=8.00552 TotLambda=0.619301
+************ Si layer 7 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=122.9mm w=0.1mm TotX0=8.00659 TotLambda=0.61952
+************ Si layer 7 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=123mm w=0.1mm TotX0=8.00765 TotLambda=0.619738
+************ Si layer 7 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=123.1mm w=0.1mm TotX0=8.00872 TotLambda=0.619957
+************ PCB layer 7 dEdx=0 X0=175.049 L0=484.239 zpos=123.2mm w=2mm TotX0=8.02015 TotLambda=0.624087
+************ Air layer 7 dEdx=0 X0=303921 L0=710261 zpos=125.2mm w=2mm TotX0=8.02015 TotLambda=0.62409
+************ Cu layer 8 dEdx=1.257 X0=14.3558 L0=155.141 zpos=127.2mm w=0.5mm TotX0=8.05498 TotLambda=0.627313
+************ CFMix layer 8 dEdx=0 X0=498.277 L0=909.149 zpos=127.7mm w=0.5mm TotX0=8.05599 TotLambda=0.627863
+************ W layer 8 dEdx=2.21 X0=3.50418 L0=103.057 zpos=128.2mm w=2.8mm TotX0=8.85503 TotLambda=0.655032
+************ Steel layer 8 dEdx=1.14059 X0=17.6176 L0=169.474 zpos=131mm w=6mm TotX0=9.1956 TotLambda=0.690436
+************ CFMix layer 8 dEdx=0 X0=498.277 L0=909.149 zpos=137mm w=0.5mm TotX0=9.1966 TotLambda=0.690986
+************ Cu layer 8 dEdx=1.257 X0=14.3558 L0=155.141 zpos=137.5mm w=0.5mm TotX0=9.23143 TotLambda=0.694209
+************ Air layer 8 dEdx=0 X0=303921 L0=710261 zpos=138mm w=2mm TotX0=9.23144 TotLambda=0.694212
+************ PCB layer 8 dEdx=0 X0=175.049 L0=484.239 zpos=140mm w=2mm TotX0=9.24287 TotLambda=0.698342
+************ Si layer 8 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=142mm w=0.1mm TotX0=9.24393 TotLambda=0.69856
+************ Si layer 8 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=142.1mm w=0.1mm TotX0=9.245 TotLambda=0.698779
+************ Si layer 8 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=142.2mm w=0.1mm TotX0=9.24607 TotLambda=0.698997
+************ WCu layer 9 dEdx=1.97175 X0=5.1223 L0=119.873 zpos=142.3mm w=1.2mm TotX0=9.48034 TotLambda=0.709008
+************ Cu layer 9 dEdx=1.257 X0=14.3558 L0=155.141 zpos=143.5mm w=6mm TotX0=9.89829 TotLambda=0.747683
+************ WCu layer 9 dEdx=1.97175 X0=5.1223 L0=119.873 zpos=149.5mm w=1.2mm TotX0=10.1326 TotLambda=0.757693
+************ Steel layer 9 dEdx=1.14059 X0=17.6176 L0=169.474 zpos=150.7mm w=6mm TotX0=10.4731 TotLambda=0.793097
+************ Si layer 9 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=156.7mm w=0.1mm TotX0=10.4742 TotLambda=0.793315
+************ Si layer 9 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=156.8mm w=0.1mm TotX0=10.4753 TotLambda=0.793534
+************ Si layer 9 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=156.9mm w=0.1mm TotX0=10.4763 TotLambda=0.793753
+************ PCB layer 9 dEdx=0 X0=175.049 L0=484.239 zpos=157mm w=2mm TotX0=10.4878 TotLambda=0.797883
+************ Air layer 9 dEdx=0 X0=303921 L0=710261 zpos=159mm w=2mm TotX0=10.4878 TotLambda=0.797886
+************ Cu layer 10 dEdx=1.257 X0=14.3558 L0=155.141 zpos=161mm w=0.5mm TotX0=10.5226 TotLambda=0.801108
+************ CFMix layer 10 dEdx=0 X0=498.277 L0=909.149 zpos=161.5mm w=0.5mm TotX0=10.5236 TotLambda=0.801658
+************ W layer 10 dEdx=2.21 X0=3.50418 L0=103.057 zpos=162mm w=2.8mm TotX0=11.3226 TotLambda=0.828828
+************ Steel layer 10 dEdx=1.14059 X0=17.6176 L0=169.474 zpos=164.8mm w=6mm TotX0=11.6632 TotLambda=0.864232
+************ CFMix layer 10 dEdx=0 X0=498.277 L0=909.149 zpos=170.8mm w=0.5mm TotX0=11.6642 TotLambda=0.864782
+************ Cu layer 10 dEdx=1.257 X0=14.3558 L0=155.141 zpos=171.3mm w=0.5mm TotX0=11.699 TotLambda=0.868005
+************ Air layer 10 dEdx=0 X0=303921 L0=710261 zpos=171.8mm w=2mm TotX0=11.699 TotLambda=0.868007
+************ PCB layer 10 dEdx=0 X0=175.049 L0=484.239 zpos=173.8mm w=2mm TotX0=11.7105 TotLambda=0.872138
+************ Si layer 10 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=175.8mm w=0.1mm TotX0=11.7115 TotLambda=0.872356
+************ Si layer 10 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=175.9mm w=0.1mm TotX0=11.7126 TotLambda=0.872575
+************ Si layer 10 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=176mm w=0.1mm TotX0=11.7137 TotLambda=0.872793
+************ WCu layer 11 dEdx=1.97175 X0=5.1223 L0=119.873 zpos=176.1mm w=1.2mm TotX0=11.9479 TotLambda=0.882804
+************ Cu layer 11 dEdx=1.257 X0=14.3558 L0=155.141 zpos=177.3mm w=6mm TotX0=12.3659 TotLambda=0.921478
+************ WCu layer 11 dEdx=1.97175 X0=5.1223 L0=119.873 zpos=183.3mm w=1.2mm TotX0=12.6002 TotLambda=0.931489
+************ Steel layer 11 dEdx=1.14059 X0=17.6176 L0=169.474 zpos=184.5mm w=6mm TotX0=12.9407 TotLambda=0.966893
+************ Si layer 11 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=190.5mm w=0.1mm TotX0=12.9418 TotLambda=0.967111
+************ Si layer 11 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=190.6mm w=0.1mm TotX0=12.9429 TotLambda=0.96733
+************ Si layer 11 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=190.7mm w=0.1mm TotX0=12.9439 TotLambda=0.967548
+************ PCB layer 11 dEdx=0 X0=175.049 L0=484.239 zpos=190.8mm w=2mm TotX0=12.9554 TotLambda=0.971679
+************ Air layer 11 dEdx=0 X0=303921 L0=710261 zpos=192.8mm w=2mm TotX0=12.9554 TotLambda=0.971681
+************ Cu layer 12 dEdx=1.257 X0=14.3558 L0=155.141 zpos=194.8mm w=0.5mm TotX0=12.9902 TotLambda=0.974904
+************ CFMix layer 12 dEdx=0 X0=498.277 L0=909.149 zpos=195.3mm w=0.5mm TotX0=12.9912 TotLambda=0.975454
+************ W layer 12 dEdx=2.21 X0=3.50418 L0=103.057 zpos=195.8mm w=2.8mm TotX0=13.7902 TotLambda=1.00262
+************ Steel layer 12 dEdx=1.14059 X0=17.6176 L0=169.474 zpos=198.6mm w=6mm TotX0=14.1308 TotLambda=1.03803
+************ CFMix layer 12 dEdx=0 X0=498.277 L0=909.149 zpos=204.6mm w=0.5mm TotX0=14.1318 TotLambda=1.03858
+************ Cu layer 12 dEdx=1.257 X0=14.3558 L0=155.141 zpos=205.1mm w=0.5mm TotX0=14.1666 TotLambda=1.0418
+************ Air layer 12 dEdx=0 X0=303921 L0=710261 zpos=205.6mm w=2mm TotX0=14.1667 TotLambda=1.0418
+************ PCB layer 12 dEdx=0 X0=175.049 L0=484.239 zpos=207.6mm w=2mm TotX0=14.1781 TotLambda=1.04593
+************ Si layer 12 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=209.6mm w=0.1mm TotX0=14.1791 TotLambda=1.04615
+************ Si layer 12 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=209.7mm w=0.1mm TotX0=14.1802 TotLambda=1.04637
+************ Si layer 12 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=209.8mm w=0.1mm TotX0=14.1813 TotLambda=1.04659
+************ WCu layer 13 dEdx=1.97175 X0=5.1223 L0=119.873 zpos=209.9mm w=1.2mm TotX0=14.4156 TotLambda=1.0566
+************ Cu layer 13 dEdx=1.257 X0=14.3558 L0=155.141 zpos=211.1mm w=6mm TotX0=14.8335 TotLambda=1.09527
+************ WCu layer 13 dEdx=1.97175 X0=5.1223 L0=119.873 zpos=217.1mm w=1.2mm TotX0=15.0678 TotLambda=1.10528
+************ Steel layer 13 dEdx=1.14059 X0=17.6176 L0=169.474 zpos=218.3mm w=6mm TotX0=15.4083 TotLambda=1.14069
+************ Si layer 13 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=224.3mm w=0.1mm TotX0=15.4094 TotLambda=1.14091
+************ Si layer 13 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=224.4mm w=0.1mm TotX0=15.4105 TotLambda=1.14113
+************ Si layer 13 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=224.5mm w=0.1mm TotX0=15.4115 TotLambda=1.14134
+************ PCB layer 13 dEdx=0 X0=175.049 L0=484.239 zpos=224.6mm w=2mm TotX0=15.423 TotLambda=1.14547
+************ Air layer 13 dEdx=0 X0=303921 L0=710261 zpos=226.6mm w=2mm TotX0=15.423 TotLambda=1.14548
+************ Cu layer 14 dEdx=1.257 X0=14.3558 L0=155.141 zpos=228.6mm w=0.5mm TotX0=15.4578 TotLambda=1.1487
+************ CFMix layer 14 dEdx=0 X0=498.277 L0=909.149 zpos=229.1mm w=0.5mm TotX0=15.4588 TotLambda=1.14925
+************ W layer 14 dEdx=2.21 X0=3.50418 L0=103.057 zpos=229.6mm w=2.8mm TotX0=16.2579 TotLambda=1.17642
+************ Steel layer 14 dEdx=1.14059 X0=17.6176 L0=169.474 zpos=232.4mm w=6mm TotX0=16.5984 TotLambda=1.21182
+************ CFMix layer 14 dEdx=0 X0=498.277 L0=909.149 zpos=238.4mm w=0.5mm TotX0=16.5994 TotLambda=1.21237
+************ Cu layer 14 dEdx=1.257 X0=14.3558 L0=155.141 zpos=238.9mm w=0.5mm TotX0=16.6343 TotLambda=1.2156
+************ Air layer 14 dEdx=0 X0=303921 L0=710261 zpos=239.4mm w=2mm TotX0=16.6343 TotLambda=1.2156
+************ PCB layer 14 dEdx=0 X0=175.049 L0=484.239 zpos=241.4mm w=2mm TotX0=16.6457 TotLambda=1.21973
+************ Si layer 14 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=243.4mm w=0.1mm TotX0=16.6468 TotLambda=1.21995
+************ Si layer 14 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=243.5mm w=0.1mm TotX0=16.6478 TotLambda=1.22017
+************ Si layer 14 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=243.6mm w=0.1mm TotX0=16.6489 TotLambda=1.22038
+************ WCu layer 15 dEdx=1.97175 X0=5.1223 L0=119.873 zpos=243.7mm w=1.2mm TotX0=16.8832 TotLambda=1.2304
+************ Cu layer 15 dEdx=1.257 X0=14.3558 L0=155.141 zpos=244.9mm w=6mm TotX0=17.3011 TotLambda=1.26907
+************ WCu layer 15 dEdx=1.97175 X0=5.1223 L0=119.873 zpos=250.9mm w=1.2mm TotX0=17.5354 TotLambda=1.27908
+************ Steel layer 15 dEdx=1.14059 X0=17.6176 L0=169.474 zpos=252.1mm w=6mm TotX0=17.8759 TotLambda=1.31448
+************ Si layer 15 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=258.1mm w=0.1mm TotX0=17.877 TotLambda=1.3147
+************ Si layer 15 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=258.2mm w=0.1mm TotX0=17.8781 TotLambda=1.31492
+************ Si layer 15 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=258.3mm w=0.1mm TotX0=17.8792 TotLambda=1.31514
+************ PCB layer 15 dEdx=0 X0=175.049 L0=484.239 zpos=258.4mm w=2mm TotX0=17.8906 TotLambda=1.31927
+************ Air layer 15 dEdx=0 X0=303921 L0=710261 zpos=260.4mm w=2mm TotX0=17.8906 TotLambda=1.31927
+************ Cu layer 16 dEdx=1.257 X0=14.3558 L0=155.141 zpos=262.4mm w=0.5mm TotX0=17.9254 TotLambda=1.3225
+************ CFMix layer 16 dEdx=0 X0=498.277 L0=909.149 zpos=262.9mm w=0.5mm TotX0=17.9264 TotLambda=1.32305
+************ W layer 16 dEdx=2.21 X0=3.50418 L0=103.057 zpos=263.4mm w=2.8mm TotX0=18.7255 TotLambda=1.35022
+************ Steel layer 16 dEdx=1.14059 X0=17.6176 L0=169.474 zpos=266.2mm w=6mm TotX0=19.066 TotLambda=1.38562
+************ CFMix layer 16 dEdx=0 X0=498.277 L0=909.149 zpos=272.2mm w=0.5mm TotX0=19.067 TotLambda=1.38617
+************ Cu layer 16 dEdx=1.257 X0=14.3558 L0=155.141 zpos=272.7mm w=0.5mm TotX0=19.1019 TotLambda=1.38939
+************ Air layer 16 dEdx=0 X0=303921 L0=710261 zpos=273.2mm w=2mm TotX0=19.1019 TotLambda=1.38939
+************ PCB layer 16 dEdx=0 X0=175.049 L0=484.239 zpos=275.2mm w=2mm TotX0=19.1133 TotLambda=1.39352
+************ Si layer 16 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=277.2mm w=0.1mm TotX0=19.1144 TotLambda=1.39374
+************ Si layer 16 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=277.3mm w=0.1mm TotX0=19.1154 TotLambda=1.39396
+************ Si layer 16 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=277.4mm w=0.1mm TotX0=19.1165 TotLambda=1.39418
+************ WCu layer 17 dEdx=1.97175 X0=5.1223 L0=119.873 zpos=277.5mm w=1.2mm TotX0=19.3508 TotLambda=1.40419
+************ Cu layer 17 dEdx=1.257 X0=14.3558 L0=155.141 zpos=278.7mm w=6mm TotX0=19.7687 TotLambda=1.44287
+************ WCu layer 17 dEdx=1.97175 X0=5.1223 L0=119.873 zpos=284.7mm w=1.2mm TotX0=20.003 TotLambda=1.45288
+************ Steel layer 17 dEdx=1.14059 X0=17.6176 L0=169.474 zpos=285.9mm w=6mm TotX0=20.3436 TotLambda=1.48828
+************ Si layer 17 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=291.9mm w=0.1mm TotX0=20.3446 TotLambda=1.4885
+************ Si layer 17 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=292mm w=0.1mm TotX0=20.3457 TotLambda=1.48872
+************ Si layer 17 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=292.1mm w=0.1mm TotX0=20.3468 TotLambda=1.48894
+************ PCB layer 17 dEdx=0 X0=175.049 L0=484.239 zpos=292.2mm w=2mm TotX0=20.3582 TotLambda=1.49307
+************ Air layer 17 dEdx=0 X0=303921 L0=710261 zpos=294.2mm w=2mm TotX0=20.3582 TotLambda=1.49307
+************ Cu layer 18 dEdx=1.257 X0=14.3558 L0=155.141 zpos=296.2mm w=0.5mm TotX0=20.393 TotLambda=1.49629
+************ CFMix layer 18 dEdx=0 X0=498.277 L0=909.149 zpos=296.7mm w=0.5mm TotX0=20.394 TotLambda=1.49684
+************ W layer 18 dEdx=2.21 X0=3.50418 L0=103.057 zpos=297.2mm w=4.2mm TotX0=21.5926 TotLambda=1.5376
+************ Steel layer 18 dEdx=1.14059 X0=17.6176 L0=169.474 zpos=301.4mm w=6mm TotX0=21.9332 TotLambda=1.573
+************ CFMix layer 18 dEdx=0 X0=498.277 L0=909.149 zpos=307.4mm w=0.5mm TotX0=21.9342 TotLambda=1.57355
+************ Cu layer 18 dEdx=1.257 X0=14.3558 L0=155.141 zpos=307.9mm w=0.5mm TotX0=21.969 TotLambda=1.57677
+************ Air layer 18 dEdx=0 X0=303921 L0=710261 zpos=308.4mm w=2mm TotX0=21.969 TotLambda=1.57678
+************ PCB layer 18 dEdx=0 X0=175.049 L0=484.239 zpos=310.4mm w=2mm TotX0=21.9804 TotLambda=1.58091
+************ Si layer 18 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=312.4mm w=0.1mm TotX0=21.9815 TotLambda=1.58112
+************ Si layer 18 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=312.5mm w=0.1mm TotX0=21.9826 TotLambda=1.58134
+************ Si layer 18 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=312.6mm w=0.1mm TotX0=21.9836 TotLambda=1.58156
+************ WCu layer 19 dEdx=1.97175 X0=5.1223 L0=119.873 zpos=312.7mm w=2.2mm TotX0=22.4131 TotLambda=1.59991
+************ Cu layer 19 dEdx=1.257 X0=14.3558 L0=155.141 zpos=314.9mm w=6mm TotX0=22.8311 TotLambda=1.63859
+************ WCu layer 19 dEdx=1.97175 X0=5.1223 L0=119.873 zpos=320.9mm w=2.2mm TotX0=23.2606 TotLambda=1.65694
+************ Steel layer 19 dEdx=1.14059 X0=17.6176 L0=169.474 zpos=323.1mm w=6mm TotX0=23.6011 TotLambda=1.69234
+************ Si layer 19 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=329.1mm w=0.1mm TotX0=23.6022 TotLambda=1.69256
+************ Si layer 19 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=329.2mm w=0.1mm TotX0=23.6033 TotLambda=1.69278
+************ Si layer 19 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=329.3mm w=0.1mm TotX0=23.6043 TotLambda=1.693
+************ PCB layer 19 dEdx=0 X0=175.049 L0=484.239 zpos=329.4mm w=2mm TotX0=23.6158 TotLambda=1.69713
+************ Air layer 19 dEdx=0 X0=303921 L0=710261 zpos=331.4mm w=2mm TotX0=23.6158 TotLambda=1.69713
+************ Cu layer 20 dEdx=1.257 X0=14.3558 L0=155.141 zpos=333.4mm w=0.5mm TotX0=23.6506 TotLambda=1.70036
+************ CFMix layer 20 dEdx=0 X0=498.277 L0=909.149 zpos=333.9mm w=0.5mm TotX0=23.6516 TotLambda=1.70091
+************ W layer 20 dEdx=2.21 X0=3.50418 L0=103.057 zpos=334.4mm w=4.2mm TotX0=24.8502 TotLambda=1.74166
+************ Steel layer 20 dEdx=1.14059 X0=17.6176 L0=169.474 zpos=338.6mm w=6mm TotX0=25.1907 TotLambda=1.77706
+************ CFMix layer 20 dEdx=0 X0=498.277 L0=909.149 zpos=344.6mm w=0.5mm TotX0=25.1917 TotLambda=1.77761
+************ Cu layer 20 dEdx=1.257 X0=14.3558 L0=155.141 zpos=345.1mm w=0.5mm TotX0=25.2266 TotLambda=1.78084
+************ Air layer 20 dEdx=0 X0=303921 L0=710261 zpos=345.6mm w=2mm TotX0=25.2266 TotLambda=1.78084
+************ PCB layer 20 dEdx=0 X0=175.049 L0=484.239 zpos=347.6mm w=2mm TotX0=25.238 TotLambda=1.78497
+************ Si layer 20 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=349.6mm w=0.1mm TotX0=25.2391 TotLambda=1.78519
+************ Si layer 20 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=349.7mm w=0.1mm TotX0=25.2401 TotLambda=1.78541
+************ Si layer 20 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=349.8mm w=0.1mm TotX0=25.2412 TotLambda=1.78563
+************ WCu layer 21 dEdx=1.97175 X0=5.1223 L0=119.873 zpos=349.9mm w=2.2mm TotX0=25.6707 TotLambda=1.80398
+************ Cu layer 21 dEdx=1.257 X0=14.3558 L0=155.141 zpos=352.1mm w=6mm TotX0=26.0887 TotLambda=1.84265
+************ WCu layer 21 dEdx=1.97175 X0=5.1223 L0=119.873 zpos=358.1mm w=2.2mm TotX0=26.5181 TotLambda=1.86101
+************ Steel layer 21 dEdx=1.14059 X0=17.6176 L0=169.474 zpos=360.3mm w=6mm TotX0=26.8587 TotLambda=1.89641
+************ Si layer 21 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=366.3mm w=0.1mm TotX0=26.8598 TotLambda=1.89663
+************ Si layer 21 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=366.4mm w=0.1mm TotX0=26.8608 TotLambda=1.89685
+************ Si layer 21 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=366.5mm w=0.1mm TotX0=26.8619 TotLambda=1.89707
+************ PCB layer 21 dEdx=0 X0=175.049 L0=484.239 zpos=366.6mm w=2mm TotX0=26.8733 TotLambda=1.9012
+************ Air layer 21 dEdx=0 X0=303921 L0=710261 zpos=368.6mm w=2mm TotX0=26.8733 TotLambda=1.9012
+************ Cu layer 22 dEdx=1.257 X0=14.3558 L0=155.141 zpos=370.6mm w=0.5mm TotX0=26.9082 TotLambda=1.90442
+************ CFMix layer 22 dEdx=0 X0=498.277 L0=909.149 zpos=371.1mm w=0.5mm TotX0=26.9092 TotLambda=1.90497
+************ W layer 22 dEdx=2.21 X0=3.50418 L0=103.057 zpos=371.6mm w=4.2mm TotX0=28.1078 TotLambda=1.94573
+************ Steel layer 22 dEdx=1.14059 X0=17.6176 L0=169.474 zpos=375.8mm w=6mm TotX0=28.4483 TotLambda=1.98113
+************ CFMix layer 22 dEdx=0 X0=498.277 L0=909.149 zpos=381.8mm w=0.5mm TotX0=28.4493 TotLambda=1.98168
+************ Cu layer 22 dEdx=1.257 X0=14.3558 L0=155.141 zpos=382.3mm w=0.5mm TotX0=28.4842 TotLambda=1.9849
+************ Air layer 22 dEdx=0 X0=303921 L0=710261 zpos=382.8mm w=2mm TotX0=28.4842 TotLambda=1.9849
+************ PCB layer 22 dEdx=0 X0=175.049 L0=484.239 zpos=384.8mm w=2mm TotX0=28.4956 TotLambda=1.98903
+************ Si layer 22 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=386.8mm w=0.1mm TotX0=28.4967 TotLambda=1.98925
+************ Si layer 22 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=386.9mm w=0.1mm TotX0=28.4977 TotLambda=1.98947
+************ Si layer 22 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=387mm w=0.1mm TotX0=28.4988 TotLambda=1.98969
+************ WCu layer 23 dEdx=1.97175 X0=5.1223 L0=119.873 zpos=387.1mm w=2.2mm TotX0=28.9283 TotLambda=2.00804
+************ Cu layer 23 dEdx=1.257 X0=14.3558 L0=155.141 zpos=389.3mm w=6mm TotX0=29.3462 TotLambda=2.04672
+************ WCu layer 23 dEdx=1.97175 X0=5.1223 L0=119.873 zpos=395.3mm w=2.2mm TotX0=29.7757 TotLambda=2.06507
+************ Steel layer 23 dEdx=1.14059 X0=17.6176 L0=169.474 zpos=397.5mm w=6mm TotX0=30.1163 TotLambda=2.10047
+************ Si layer 23 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=403.5mm w=0.1mm TotX0=30.1174 TotLambda=2.10069
+************ Si layer 23 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=403.6mm w=0.1mm TotX0=30.1184 TotLambda=2.10091
+************ Si layer 23 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=403.7mm w=0.1mm TotX0=30.1195 TotLambda=2.10113
+************ PCB layer 23 dEdx=0 X0=175.049 L0=484.239 zpos=403.8mm w=2mm TotX0=30.1309 TotLambda=2.10526
+************ Air layer 23 dEdx=0 X0=303921 L0=710261 zpos=405.8mm w=2mm TotX0=30.1309 TotLambda=2.10526
+************ Cu layer 24 dEdx=1.257 X0=14.3558 L0=155.141 zpos=407.8mm w=0.5mm TotX0=30.1658 TotLambda=2.10849
+************ CFMix layer 24 dEdx=0 X0=498.277 L0=909.149 zpos=408.3mm w=0.5mm TotX0=30.1668 TotLambda=2.10904
+************ W layer 24 dEdx=2.21 X0=3.50418 L0=103.057 zpos=408.8mm w=4.2mm TotX0=31.3653 TotLambda=2.14979
+************ Steel layer 24 dEdx=1.14059 X0=17.6176 L0=169.474 zpos=413mm w=6mm TotX0=31.7059 TotLambda=2.18519
+************ CFMix layer 24 dEdx=0 X0=498.277 L0=909.149 zpos=419mm w=0.5mm TotX0=31.7069 TotLambda=2.18574
+************ Cu layer 24 dEdx=1.257 X0=14.3558 L0=155.141 zpos=419.5mm w=0.5mm TotX0=31.7417 TotLambda=2.18897
+************ Air layer 24 dEdx=0 X0=303921 L0=710261 zpos=420mm w=2mm TotX0=31.7417 TotLambda=2.18897
+************ PCB layer 24 dEdx=0 X0=175.049 L0=484.239 zpos=422mm w=2mm TotX0=31.7532 TotLambda=2.1931
+************ Si layer 24 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=424mm w=0.1mm TotX0=31.7542 TotLambda=2.19332
+************ Si layer 24 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=424.1mm w=0.1mm TotX0=31.7553 TotLambda=2.19354
+************ Si layer 24 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=424.2mm w=0.1mm TotX0=31.7564 TotLambda=2.19376
+************ WCu layer 25 dEdx=1.97175 X0=5.1223 L0=119.873 zpos=424.3mm w=2.2mm TotX0=32.1859 TotLambda=2.21211
+************ Cu layer 25 dEdx=1.257 X0=14.3558 L0=155.141 zpos=426.5mm w=6mm TotX0=32.6038 TotLambda=2.25078
+************ WCu layer 25 dEdx=1.97175 X0=5.1223 L0=119.873 zpos=432.5mm w=2.2mm TotX0=33.0333 TotLambda=2.26914
+************ Steel layer 25 dEdx=1.14059 X0=17.6176 L0=169.474 zpos=434.7mm w=6mm TotX0=33.3739 TotLambda=2.30454
+************ Si layer 25 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=440.7mm w=0.1mm TotX0=33.3749 TotLambda=2.30476
+************ Si layer 25 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=440.8mm w=0.1mm TotX0=33.376 TotLambda=2.30498
+************ Si layer 25 dEdx=0.3876 X0=93.6607 L0=457.531 zpos=440.9mm w=0.1mm TotX0=33.3771 TotLambda=2.30519
+************ PCB layer 25 dEdx=0 X0=175.049 L0=484.239 zpos=441mm w=2mm TotX0=33.3885 TotLambda=2.30933
+************ Air layer 25 dEdx=0 X0=303921 L0=710261 zpos=443mm w=2mm TotX0=33.3885 TotLambda=2.30933
+WARNING: model G4LENeutronInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4LEProtonInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4LEPionPlusInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4LEPionMinusInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4LEKaonPlusInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4LEKaonMinusInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4LEKaonZeroInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4LEAntiKaonZeroInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4LEKaonZeroLInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4LEKaonZeroInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4LEAntiKaonZeroInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4LEKaonZeroSInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4LEAntiProtonInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4HEAntiProtonInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4LEAntiNeutronInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4HEAntiNeutronInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4LELambdaInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4HELambdaInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4LEAntiLambdaInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4HEAntiLambdaInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4LESigmaMinusInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4HESigmaMinusInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4LEAntiSigmaMinusInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4HEAntiSigmaMinusInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4LESigmaPlusInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4HESigmaPlusInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4LEAntiSigmaPlusInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4HEAntiSigmaPlusInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4LEXiMinusInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4HEXiMinusInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4LEAntiXiMinusInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4HEAntiXiMinusInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4LEXiZeroInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4HEXiZeroInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4LEAntiXiZeroInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4HEAntiXiZeroInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4LEOmegaMinusInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4HEOmegaMinusInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4LEAntiOmegaMinusInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+WARNING: model G4HEAntiOmegaMinusInelastic is being deprecated and will
+disappear in Geant4 version 10.0
+### Adding tracking cuts for neutron  TimeCut(ns)= 10000  KinEnergyCut(MeV)= 0
+PhysicsList::SetCuts:CutLength : 30 um 
+Visualization Manager instantiating with verbosity "warnings (3)"...
+Visualization Manager initialising...
+Registering graphics systems...
+
+You have successfully registered the following graphics systems.
+Current available graphics systems are:
+  ASCIITree (ATree)
+  DAWNFILE (DAWNFILE)
+  G4HepRep (HepRepXML)
+  G4HepRepFile (HepRepFile)
+  OpenGLImmediateQt (OGLI, OGLIQt)
+  OpenGLImmediateX (OGLIX)
+  OpenGLImmediateXm (OGLIXm, OGLI_FALLBACK, OGLIQt_FALLBACK)
+  OpenGLStoredQt (OGL, OGLS, OGLSQt)
+  OpenGLStoredX (OGLSX)
+  OpenGLStoredXm (OGLSXm, OGL_FALLBACK, OGLS_FALLBACK, OGLSQt_FALLBACK)
+  RayTracer (RayTracer)
+  RayTracerX (RayTracerX)
+  VRML1FILE (VRML1FILE)
+  VRML2FILE (VRML2FILE)
+  gMocrenFile (gMocrenFile)
+
+Registering model factories...
+
+You have successfully registered the following model factories.
+Registered model factories:
+  generic
+  drawByCharge
+  drawByParticleID
+  drawByOriginVolume
+  drawByAttribute
+
+Registered filter factories:
+  chargeFilter
+  particleFilter
+  originVolumeFilter
+  attributeFilter
+
+You have successfully registered the following user vis actions.
+Run Duration User Vis Actions: none
+End of Event User Vis Actions: none
+End of Run User Vis Actions: none
+
+Some /vis commands (optionally) take a string to specify colour.
+Available colours:
+  black, blue, brown, cyan, gray, green, grey, magenta, red, white, yellow
+
+ ====================================== 
+ ========  Running batch mode ========= 
+ ====================================== 
+current generator type: particleGun
+
+phot:   for  gamma    SubType= 12
+      LambdaPrime table from 200 keV to 10 TeV in 54 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+       PhotoElectric :  Emin=        0 eV    Emax=       10 TeV   AngularGenSauterGavrila  FluoActive
+
+compt:   for  gamma    SubType= 13
+      Lambda table from 100 eV  to 1 MeV in 28 bins, spline: 1
+      LambdaPrime table from 1 MeV to 10 TeV in 49 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+       Klein-Nishina :  Emin=        0 eV    Emax=       10 TeV
+
+conv:   for  gamma    SubType= 14
+      Lambda table from 1.022 MeV to 10 TeV in 49 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        BetheHeitler :  Emin=        0 eV    Emax=       80 GeV
+     BetheHeitlerLPM :  Emin=       80 GeV   Emax=       10 TeV
+
+msc:   for e-    SubType= 10
+      RangeFactor= 0.04, stepLimitType: 1, latDisplacement: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc95 :  Emin=        0 eV    Emax=      100 MeV  Table with 42 bins Emin=    100 eV    Emax=    100 MeV
+        WentzelVIUni :  Emin=      100 MeV   Emax=       10 TeV  Table with 35 bins Emin=    100 MeV   Emax=     10 TeV
+
+eIoni:   for  e-    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha :  Emin=        0 eV    Emax=       10 TeV
+
+eBrem:   for  e-    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      LPM flag: 1 for E > 1 GeV
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB :  Emin=        0 eV    Emax=        1 GeV   DipBustGen
+            eBremLPM :  Emin=        1 GeV   Emax=       10 TeV   DipBustGen
+
+CoulombScat:   for  e-    SubType= 1
+      Lambda table from 100 MeV to 10 TeV in 35 bins, spline: 1
+      180 < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering :  Emin=      100 MeV   Emax=       10 TeV
+
+msc:   for e+    SubType= 10
+      RangeFactor= 0.04, stepLimitType: 1, latDisplacement: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc95 :  Emin=        0 eV    Emax=      100 MeV  Table with 42 bins Emin=    100 eV    Emax=    100 MeV
+        WentzelVIUni :  Emin=      100 MeV   Emax=       10 TeV  Table with 35 bins Emin=    100 MeV   Emax=     10 TeV
+
+eIoni:   for  e+    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha :  Emin=        0 eV    Emax=       10 TeV
+
+eBrem:   for  e+    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      LPM flag: 1 for E > 1 GeV
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB :  Emin=        0 eV    Emax=        1 GeV   DipBustGen
+            eBremLPM :  Emin=        1 GeV   Emax=       10 TeV   DipBustGen
+
+annihil:   for  e+    SubType= 5
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            eplus2gg :  Emin=        0 eV    Emax=       10 TeV
+
+CoulombScat:   for  e+    SubType= 1
+      Lambda table from 100 MeV to 10 TeV in 35 bins, spline: 1
+      180 < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering :  Emin=      100 MeV   Emax=       10 TeV
+
+msc:   for proton    SubType= 10
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni :  Emin=        0 eV    Emax=       10 TeV  Table with 77 bins Emin=    100 eV    Emax=     10 TeV
+
+hIoni:   for  proton    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=        2 MeV
+          BetheBloch :  Emin=        2 MeV   Emax=       10 TeV
+
+hBrems:   for  proton    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  proton    SubType= 4
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for GenericIon    SubType= 10
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc95 :  Emin=        0 eV    Emax=       10 TeV
+
+ionIoni:   for  GenericIon    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 0.01, dRoverRange= 0.1, integral: 1, fluct: 1, linLossLimit= 0.02
+      Stopping Power data for 17 ion/material pairs 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            BraggIon :  Emin=        0 eV    Emax=        2 MeV
+          BetheBloch :  Emin=        2 MeV   Emax=       10 TeV
+
+msc:   for alpha    SubType= 10
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc95 :  Emin=        0 eV    Emax=       10 TeV  Table with 77 bins Emin=    100 eV    Emax=     10 TeV
+
+ionIoni:   for  alpha    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 0.01, dRoverRange= 0.1, integral: 1, fluct: 1, linLossLimit= 0.02
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            BraggIon :  Emin=        0 eV    Emax=   7.9452 MeV
+          BetheBloch :  Emin=   7.9452 MeV   Emax=       10 TeV
+
+msc:   for anti_proton    SubType= 10
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni :  Emin=        0 eV    Emax=       10 TeV  Table with 77 bins Emin=    100 eV    Emax=     10 TeV
+
+hIoni:   for  anti_proton    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=        2 MeV
+          BetheBloch :  Emin=        2 MeV   Emax=       10 TeV
+
+hBrems:   for  anti_proton    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  anti_proton    SubType= 4
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for kaon+    SubType= 10
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni :  Emin=        0 eV    Emax=       10 TeV  Table with 77 bins Emin=    100 eV    Emax=     10 TeV
+
+hIoni:   for  kaon+    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=  1.05231 MeV
+          BetheBloch :  Emin=  1.05231 MeV   Emax=       10 TeV
+
+hBrems:   for  kaon+    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  kaon+    SubType= 4
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for kaon-    SubType= 10
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni :  Emin=        0 eV    Emax=       10 TeV  Table with 77 bins Emin=    100 eV    Emax=     10 TeV
+
+hIoni:   for  kaon-    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=  1.05231 MeV
+          BetheBloch :  Emin=  1.05231 MeV   Emax=       10 TeV
+
+hBrems:   for  kaon-    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  kaon-    SubType= 4
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for mu+    SubType= 10
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni :  Emin=        0 eV    Emax=       10 TeV  Table with 77 bins Emin=    100 eV    Emax=     10 TeV
+
+muIoni:   for  mu+    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=      200 keV
+          BetheBloch :  Emin=      200 keV   Emax=        1 GeV
+        MuBetheBloch :  Emin=        1 GeV   Emax=       10 TeV
+
+muBrems:   for  mu+    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem :  Emin=        0 eV    Emax=       10 TeV
+
+muPairProd:   for  mu+    SubType= 4
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+CoulombScat:   for  mu+    SubType= 1
+      Lambda table from 100 eV  to 10 TeV in 43 bins, spline: 1
+      180 < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for mu-    SubType= 10
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni :  Emin=        0 eV    Emax=       10 TeV  Table with 77 bins Emin=    100 eV    Emax=     10 TeV
+
+muIoni:   for  mu-    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=      200 keV
+          BetheBloch :  Emin=      200 keV   Emax=        1 GeV
+        MuBetheBloch :  Emin=        1 GeV   Emax=       10 TeV
+
+muBrems:   for  mu-    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem :  Emin=        0 eV    Emax=       10 TeV
+
+muPairProd:   for  mu-    SubType= 4
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+CoulombScat:   for  mu-    SubType= 1
+      Lambda table from 100 eV  to 10 TeV in 43 bins, spline: 1
+      180 < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for pi+    SubType= 10
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni :  Emin=        0 eV    Emax=       10 TeV  Table with 77 bins Emin=    100 eV    Emax=     10 TeV
+
+hIoni:   for  pi+    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=  297.505 keV
+          BetheBloch :  Emin=  297.505 keV   Emax=       10 TeV
+
+hBrems:   for  pi+    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  pi+    SubType= 4
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for pi-    SubType= 10
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni :  Emin=        0 eV    Emax=       10 TeV  Table with 77 bins Emin=    100 eV    Emax=     10 TeV
+
+hIoni:   for  pi-    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=  297.505 keV
+          BetheBloch :  Emin=  297.505 keV   Emax=       10 TeV
+
+hBrems:   for  pi-    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  pi-    SubType= 4
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+============================================================================================
+             HADRONIC PROCESSES SUMMARY (verbose level 1)
+
+                                  Hadronic Processes for <GenericIon>
+                                  -----------------------------------
+        ionInelastic  Models:     Binary Light Ion Cascade: Emin(GeV)=    0  Emax(GeV)= 4
+                                                      FTFP: Emin(GeV)=    2  Emax(GeV)= 100000
+
+        ionInelastic  Crs sctns: Glauber-Gribov nucleus nucleus: Emin(GeV)=    0  Emax(GeV)= 100000
+                                          GheishaInelastic: Emin(GeV)=    0  Emax(GeV)= 100000
+
+
+                                  Hadronic Processes for <anti_neutron>
+                                  -----------------------------------
+          hadElastic  Models:                 hElasticLHEP: Emin(GeV)=    0  Emax(GeV)= 100000
+
+          hadElastic  Crs sctns:            GheishaElastic: Emin(GeV)=    0  Emax(GeV)= 100000
+
+AntiNeutronInelastic  Models:     G4LEAntiNeutronInelastic: Emin(GeV)=    0  Emax(GeV)= 25
+                                  G4HEAntiNeutronInelastic: Emin(GeV)=   20  Emax(GeV)= 100000
+
+AntiNeutronInelastic  Crs sctns:              AntiAGlauber: Emin(GeV)=    0  Emax(GeV)= 1.79769e+305
+                                          GheishaInelastic: Emin(GeV)=    0  Emax(GeV)= 100000
+
+
+                                  Hadronic Processes for <anti_proton>
+                                  -----------------------------------
+          hadElastic  Models:                 hElasticLHEP: Emin(GeV)=    0  Emax(GeV)= 0.1
+                                              AntiAElastic: Emin(GeV)=  0.1  Emax(GeV)= 100000
+
+          hadElastic  Crs sctns:              AntiAGlauber: Emin(GeV)=    0  Emax(GeV)= 1.79769e+305
+                                            GheishaElastic: Emin(GeV)=    0  Emax(GeV)= 100000
+
+ AntiProtonInelastic  Models:      G4LEAntiProtonInelastic: Emin(GeV)=    0  Emax(GeV)= 25
+                                   G4HEAntiProtonInelastic: Emin(GeV)=   20  Emax(GeV)= 100000
+
+ AntiProtonInelastic  Crs sctns:              AntiAGlauber: Emin(GeV)=    0  Emax(GeV)= 1.79769e+305
+                                          GheishaInelastic: Emin(GeV)=    0  Emax(GeV)= 100000
+
+          hFritiofCaptureAtRest
+
+                                  Hadronic Processes for <e+>
+                                  -----------------------------------
+     PositronNuclear  Models:      G4ElectroVDNuclearModel: Emin(GeV)=    0  Emax(GeV)= 1e+06
+
+     PositronNuclear  Crs sctns:          ElectroNuclearXS: Emin(GeV)=    0  Emax(GeV)= 100000
+                                          GheishaInelastic: Emin(GeV)=    0  Emax(GeV)= 100000
+
+
+                                  Hadronic Processes for <e->
+                                  -----------------------------------
+      ElectroNuclear  Models:      G4ElectroVDNuclearModel: Emin(GeV)=    0  Emax(GeV)= 1e+06
+
+      ElectroNuclear  Crs sctns:          ElectroNuclearXS: Emin(GeV)=    0  Emax(GeV)= 100000
+                                          GheishaInelastic: Emin(GeV)=    0  Emax(GeV)= 100000
+
+
+                                  Hadronic Processes for <gamma>
+                                  -----------------------------------
+     PhotonInelastic  Models:               BertiniCascade: Emin(GeV)=    0  Emax(GeV)= 3.5
+                                           TheoFSGenerator: Emin(GeV)=    3  Emax(GeV)= 100000
+
+     PhotonInelastic  Crs sctns:            PhotoNuclearXS: Emin(GeV)=    0  Emax(GeV)= 100000
+                                          GheishaInelastic: Emin(GeV)=    0  Emax(GeV)= 100000
+
+
+                                  Hadronic Processes for <kaon+>
+                                  -----------------------------------
+          hadElastic  Models:                 hElasticLHEP: Emin(GeV)=    0  Emax(GeV)= 100000
+
+          hadElastic  Crs sctns:            GheishaElastic: Emin(GeV)=    0  Emax(GeV)= 100000
+
+   KaonPlusInelastic  Models:                         QGSP: Emin(GeV)=   12  Emax(GeV)= 100000
+                                     G4LEKaonPlusInelastic: Emin(GeV)=  9.5  Emax(GeV)= 25
+                                            BertiniCascade: Emin(GeV)=    0  Emax(GeV)= 9.9
+
+   KaonPlusInelastic  Crs sctns:  ChipsKaonPlusInelasticXS: Emin(GeV)=    0  Emax(GeV)= 100000
+                                          GheishaInelastic: Emin(GeV)=    0  Emax(GeV)= 100000
+
+
+                                  Hadronic Processes for <kaon->
+                                  -----------------------------------
+          hadElastic  Models:                 hElasticLHEP: Emin(GeV)=    0  Emax(GeV)= 100000
+
+          hadElastic  Crs sctns:            GheishaElastic: Emin(GeV)=    0  Emax(GeV)= 100000
+
+  KaonMinusInelastic  Models:                         QGSP: Emin(GeV)=   12  Emax(GeV)= 100000
+                                    G4LEKaonMinusInelastic: Emin(GeV)=  9.5  Emax(GeV)= 25
+                                            BertiniCascade: Emin(GeV)=    0  Emax(GeV)= 9.9
+
+  KaonMinusInelastic  Crs sctns: ChipsKaonMinusInelasticXS: Emin(GeV)=    0  Emax(GeV)= 100000
+                                          GheishaInelastic: Emin(GeV)=    0  Emax(GeV)= 100000
+
+          hBertiniCaptureAtRest
+
+                                  Hadronic Processes for <lambda>
+                                  -----------------------------------
+          hadElastic  Models:                 hElasticLHEP: Emin(GeV)=    0  Emax(GeV)= 100000
+
+          hadElastic  Crs sctns:            GheishaElastic: Emin(GeV)=    0  Emax(GeV)= 100000
+
+     LambdaInelastic  Models:          G4LELambdaInelastic: Emin(GeV)=    0  Emax(GeV)= 25
+                                       G4HELambdaInelastic: Emin(GeV)=   20  Emax(GeV)= 100000
+
+     LambdaInelastic  Crs sctns:   ChipsHyperonInelasticXS: Emin(GeV)=    0  Emax(GeV)= 100000
+                                          GheishaInelastic: Emin(GeV)=    0  Emax(GeV)= 100000
+
+
+                     Hadronic Processes for <mu->
+          muMinusCaptureAtRest
+
+                                  Hadronic Processes for <neutron>
+                                  -----------------------------------
+          hadElastic  Models:                hElasticCHIPS: Emin(GeV)=    0  Emax(GeV)= 100000
+
+          hadElastic  Crs sctns:     ChipsNeutronElasticXS: Emin(GeV)=    0  Emax(GeV)= 100000
+                                            GheishaElastic: Emin(GeV)=    0  Emax(GeV)= 100000
+
+    NeutronInelastic  Models:                         QGSP: Emin(GeV)=   12  Emax(GeV)= 100000
+                                      G4LENeutronInelastic: Emin(GeV)=  9.5  Emax(GeV)= 25
+                                            BertiniCascade: Emin(GeV)=    0  Emax(GeV)= 9.9
+
+    NeutronInelastic  Crs sctns:       Barashenkov-Glauber: Emin(GeV)=    0  Emax(GeV)= 100000
+                                          GheishaInelastic: Emin(GeV)=    0  Emax(GeV)= 100000
+
+            nCapture  Models:                   G4LCapture: Emin(GeV)=    0  Emax(GeV)= 20000
+
+            nCapture  Crs sctns:          GheishaCaptureXS: Emin(GeV)=    0  Emax(GeV)= 100000
+
+            nFission  Models:                   G4LFission: Emin(GeV)=    0  Emax(GeV)= 20000
+
+            nFission  Crs sctns:          GheishaFissionXS: Emin(GeV)=    0  Emax(GeV)= 100000
+
+
+                                  Hadronic Processes for <pi+>
+                                  -----------------------------------
+          hadElastic  Models:                 hElasticLHEP: Emin(GeV)=    0  Emax(GeV)= 1
+                                           hElasticGlauber: Emin(GeV)=    1  Emax(GeV)= 100000
+
+          hadElastic  Crs sctns:       Barashenkov-Glauber: Emin(GeV)=    0  Emax(GeV)= 100000
+                                            GheishaElastic: Emin(GeV)=    0  Emax(GeV)= 100000
+
+   PionPlusInelastic  Models:                         QGSP: Emin(GeV)=   12  Emax(GeV)= 100000
+                                     G4LEPionPlusInelastic: Emin(GeV)=  9.5  Emax(GeV)= 25
+                                            BertiniCascade: Emin(GeV)=    0  Emax(GeV)= 9.9
+
+   PionPlusInelastic  Crs sctns:      G4CrossSectionPairGG: Emin(GeV)=    0  Emax(GeV)= 100000
+                         G4CrossSectionPairGG: G4PiNuclearCrossSection cross sections 
+                           below 91 GeV, Glauber-Gribov above 
+                                          GheishaInelastic: Emin(GeV)=    0  Emax(GeV)= 100000
+
+
+                                  Hadronic Processes for <pi->
+                                  -----------------------------------
+          hadElastic  Models:                 hElasticLHEP: Emin(GeV)=    0  Emax(GeV)= 1
+                                           hElasticGlauber: Emin(GeV)=    1  Emax(GeV)= 100000
+
+          hadElastic  Crs sctns:       Barashenkov-Glauber: Emin(GeV)=    0  Emax(GeV)= 100000
+                                            GheishaElastic: Emin(GeV)=    0  Emax(GeV)= 100000
+
+  PionMinusInelastic  Models:                         QGSP: Emin(GeV)=   12  Emax(GeV)= 100000
+                                    G4LEPionMinusInelastic: Emin(GeV)=  9.5  Emax(GeV)= 25
+                                            BertiniCascade: Emin(GeV)=    0  Emax(GeV)= 9.9
+
+  PionMinusInelastic  Crs sctns:      G4CrossSectionPairGG: Emin(GeV)=    0  Emax(GeV)= 100000
+                         G4CrossSectionPairGG: G4PiNuclearCrossSection cross sections 
+                           below 91 GeV, Glauber-Gribov above 
+                                          GheishaInelastic: Emin(GeV)=    0  Emax(GeV)= 100000
+
+          hBertiniCaptureAtRest
+
+                                  Hadronic Processes for <proton>
+                                  -----------------------------------
+          hadElastic  Models:                hElasticCHIPS: Emin(GeV)=    0  Emax(GeV)= 100000
+
+          hadElastic  Crs sctns:      ChipsProtonElasticXS: Emin(GeV)=    0  Emax(GeV)= 100000
+                                            GheishaElastic: Emin(GeV)=    0  Emax(GeV)= 100000
+
+     ProtonInelastic  Models:                         QGSP: Emin(GeV)=   12  Emax(GeV)= 100000
+                                       G4LEProtonInelastic: Emin(GeV)=  9.5  Emax(GeV)= 25
+                                            BertiniCascade: Emin(GeV)=    0  Emax(GeV)= 9.9
+
+     ProtonInelastic  Crs sctns:       Barashenkov-Glauber: Emin(GeV)=    0  Emax(GeV)= 100000
+                                          GheishaInelastic: Emin(GeV)=    0  Emax(GeV)= 100000
+
+============================================================================================
+
+========= Table of registered couples ==============================
+
+Index : 0     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_AIR
+ Range cuts        :  gamma  700 um     e-  700 um     e+  700 um  proton 700 um 
+ Energy thresholds :  gamma  990 eV     e-  990 eV     e+  990 eV  proton 70 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 1     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Cu
+ Range cuts        :  gamma  700 um     e-  700 um     e+  700 um  proton 700 um 
+ Energy thresholds :  gamma  20.6438 keV    e-  1.03121 MeV    e+  977.24 keV proton 70 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 2     used in the geometry : Yes     recalculation needed : No 
+ Material : CFMix
+ Range cuts        :  gamma  700 um     e-  700 um     e+  700 um  proton 700 um 
+ Energy thresholds :  gamma  2.03195 keV    e-  239.904 keV    e+  231.977 keV proton 70 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 3     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_W
+ Range cuts        :  gamma  700 um     e-  700 um     e+  700 um  proton 700 um 
+ Energy thresholds :  gamma  97.4901 keV    e-  1.63955 MeV    e+  1.54333 MeV proton 70 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 4     used in the geometry : Yes     recalculation needed : No 
+ Material : Steel
+ Range cuts        :  gamma  700 um     e-  700 um     e+  700 um  proton 700 um 
+ Energy thresholds :  gamma  17.2183 keV    e-  951.321 keV    e+  901.528 keV proton 70 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 5     used in the geometry : Yes     recalculation needed : No 
+ Material : FR4
+ Range cuts        :  gamma  700 um     e-  700 um     e+  700 um  proton 700 um 
+ Energy thresholds :  gamma  4.0192 keV    e-  376.336 keV    e+  363.901 keV proton 70 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 6     used in the geometry : Yes     recalculation needed : No 
+ Material : WCu
+ Range cuts        :  gamma  700 um     e-  700 um     e+  700 um  proton 700 um 
+ Energy thresholds :  gamma  87.5518 keV    e-  1.386 MeV    e+  1.29592 MeV proton 70 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 7     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si1_0Reg
+
+Index : 8     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si1_1Reg
+
+Index : 9     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si1_2Reg
+
+Index : 10     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si2_0Reg
+
+Index : 11     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si2_1Reg
+
+Index : 12     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si2_2Reg
+
+Index : 13     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si3_0Reg
+
+Index : 14     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si3_1Reg
+
+Index : 15     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si3_2Reg
+
+Index : 16     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si4_0Reg
+
+Index : 17     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si4_1Reg
+
+Index : 18     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si4_2Reg
+
+Index : 19     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si5_0Reg
+
+Index : 20     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si5_1Reg
+
+Index : 21     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si5_2Reg
+
+Index : 22     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si6_0Reg
+
+Index : 23     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si6_1Reg
+
+Index : 24     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si6_2Reg
+
+Index : 25     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si7_0Reg
+
+Index : 26     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si7_1Reg
+
+Index : 27     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si7_2Reg
+
+Index : 28     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si8_0Reg
+
+Index : 29     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si8_1Reg
+
+Index : 30     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si8_2Reg
+
+Index : 31     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si9_0Reg
+
+Index : 32     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si9_1Reg
+
+Index : 33     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si9_2Reg
+
+Index : 34     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si10_0Reg
+
+Index : 35     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si10_1Reg
+
+Index : 36     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si10_2Reg
+
+Index : 37     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si11_0Reg
+
+Index : 38     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si11_1Reg
+
+Index : 39     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si11_2Reg
+
+Index : 40     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si12_0Reg
+
+Index : 41     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si12_1Reg
+
+Index : 42     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si12_2Reg
+
+Index : 43     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si13_0Reg
+
+Index : 44     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si13_1Reg
+
+Index : 45     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si13_2Reg
+
+Index : 46     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si14_0Reg
+
+Index : 47     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si14_1Reg
+
+Index : 48     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si14_2Reg
+
+Index : 49     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si15_0Reg
+
+Index : 50     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si15_1Reg
+
+Index : 51     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si15_2Reg
+
+Index : 52     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si16_0Reg
+
+Index : 53     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si16_1Reg
+
+Index : 54     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si16_2Reg
+
+Index : 55     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si17_0Reg
+
+Index : 56     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si17_1Reg
+
+Index : 57     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si17_2Reg
+
+Index : 58     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si18_0Reg
+
+Index : 59     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si18_1Reg
+
+Index : 60     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si18_2Reg
+
+Index : 61     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si19_0Reg
+
+Index : 62     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si19_1Reg
+
+Index : 63     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si19_2Reg
+
+Index : 64     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si20_0Reg
+
+Index : 65     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si20_1Reg
+
+Index : 66     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si20_2Reg
+
+Index : 67     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si21_0Reg
+
+Index : 68     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si21_1Reg
+
+Index : 69     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si21_2Reg
+
+Index : 70     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si22_0Reg
+
+Index : 71     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si22_1Reg
+
+Index : 72     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si22_2Reg
+
+Index : 73     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si23_0Reg
+
+Index : 74     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si23_1Reg
+
+Index : 75     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si23_2Reg
+
+Index : 76     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si24_0Reg
+
+Index : 77     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si24_1Reg
+
+Index : 78     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si24_2Reg
+
+Index : 79     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si25_0Reg
+
+Index : 80     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si25_1Reg
+
+Index : 81     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si25_2Reg
+
+Index : 82     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si26_0Reg
+
+Index : 83     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si26_1Reg
+
+Index : 84     used in the geometry : Yes     recalculation needed : No 
+ Material : G4_Si
+ Range cuts        :  gamma  30 um     e-  30 um     e+  30 um  proton 30 um 
+ Energy thresholds :  gamma  1.31284 keV    e-  60.0938 keV    e+  59.2915 keV proton 3 keV
+ Region(s) which use this couple : 
+    Si26_2Reg
+
+====================================================================
+
+### Run 0 start.
+ -- Gun position set to: 35.1698,7.11993,-244.75
+
+---> Begin of event: 0
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1362055585, 1854824161
+----------------------------------------
+E/[MeV]	  Si	Absorber	Total	Si g frac	Si e frac	Si mu frac	Si had frac	Si <t> 	 nG4SiHits
+	  0.198	24.8		25.8	0	1	0	0	0.122	51	
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 34
+	  0.509	120		123	0	1	0	0	0.167	131	
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 102
+	  1.96	182		207	0	1	0	0	0.297	385	
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 234
+	  1.92	404		423	0	1	0	0	0.316	467	
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 312
+	  3.49	362		391	0.00106	0.999	0	0	0.347	774	
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 524
+	  4.31	566		583	0.000428	1	0	0	0.419	952	
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 644
+	  0.812	222		239	0.00227	0.998	0	0	0.481	498	
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 318
+	  0.899	256		262	0	1	0	0	0.5	378	
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 234
+	  0.112	186		192	0	1	0	0	0.573	282	
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 186
+	  0.754	133		140	0	1	0	0	0.6	249	
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 164
+	  0	179		180	0	0	0	0	0	189	
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 126
+	  0.161	53.1		56.8	0	1	0	0	0.711	138	
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 92
+	  0.947	54.8		61.4	0	1	0	0	0.884	211	
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 120
+	  0.703	128		130	0	1	0	0	0.83	176	
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 120
+	  0.775	76.6		79.7	0	1	0	0	0.951	204	
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 140
+	  0.546	42.2		44.3	0	1	0	0	0.953	107	
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 72
+	  0.0296	41.5		42.4	0	1	0	0	1.01	76	
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 50
+	  0	34.3		35.1	0	0	0	0	0	57	
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 38
+	  0	3.74		3.74	0	0	0	0	0	18	
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 12
+	  0.126	5.23		5.93	0	1	0	0	1.18	27	
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 18
+	  0	5.92		6.8	0	0	0	0	0	15	
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 10
+	  0	9.87		9.87	0	0	0	0	0	12	
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 8
+	  0	0.848		0.848	0	0	0	0	0	18	
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 12
+	  0	3.97		3.97	0	0	0	0	0	6	
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 4
+	  0	4.27		4.27	0	0	0	0	0	6	
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 4
+	  0	6.16		6.16	0	0	0	0	0	0	
+ -- Number of truth particles = 1
+ -- Number of simhits = 1878
+ -- Number of sampling sections = 26
+ -- Gun position set to: 14.9,8.61,-245
+if (layer==0) return 12.5206;
+if (layer==1) return 16.7517;
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 208
+if (layer==2) return 12.5206;
+if (layer==3) return 16.7517;
+if (layer==4) return 12.5206;
+if (layer==5) return 16.7517;
+if (layer==6) return 12.5206;
+if (layer==7) return 16.7517;
+if (layer==8) return 14.2886;
+if (layer==9) return 19.1178;
+if (layer==10) return 14.2886;
+if (layer==11) return 19.1178;
+if (layer==12) return 14.2886;
+if (layer==13) return 19.1178;
+if (layer==14) return 14.2886;
+if (layer==15) return 19.1178;
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 180
+if (layer==16) return 14.2886;
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 192
+if (layer==17) return 19.1178;
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 78
+if (layer==18) return 17.3826;
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 36
+if (layer==19) return 23.0613;
+if (layer==20) return 17.3826;
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 22
+if (layer==21) return 23.0613;
+if (layer==22) return 17.3826;
+if (layer==23) return 23.0613;
+if (layer==24) return 17.3826;
+if (layer==25) return 23.0613;
+ -- Gun position set to: 39.5,15,-245
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 98
+ -- Gun position set to: 58.2,-55.6,-245
+ -- Gun position set to: 8.66,35.2,-245
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 536
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 684
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 400
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 378
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 312
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 348
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 42
+ -- Gun position set to: -27.5,-40.5,-245
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 666
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 534
+ -- Gun position set to: -11.4,-11.5,-245
+ -- Gun position set to: 38.8,49.3,-245
+ -- Gun position set to: 10.9,-60.2,-245
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 2
+ -- Gun position set to: -30.9,-38.5,-245
+ -- Gun position set to: -39.9,38.8,-245
+
+---> Begin of event: 10
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 713552905, 298410884
+----------------------------------------
+E/[MeV]	  Si	Absorber	Total	Si g frac	Si e frac	Si mu frac	Si had frac	Si <t> 	 nG4SiHits
+	  5.43	467		519	0.000339	1	0	0	0.128	254	
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 218
+	  12	1.75e+03		1.84e+03	0	1	0	0	0.175	288	
+	  22.9	3.03e+03		3.29e+03	0	1	0	0	0.248	389	
+	  24.1	4.99e+03		5.14e+03	0.000153	1	0	0	0.293	451	
+	  27.8	4.17e+03		4.43e+03	0.000331	1	0	0	0.35	482	
+	  21.4	4.57e+03		4.69e+03	0.000345	1	0	0	0.407	444	
+	  15.1	2.81e+03		2.96e+03	0.000243	1	0	0	0.469	447	
+	  14.6	3.08e+03		3.15e+03	0.000252	1	0	0	0.663	342	
+	  8.04	2.09e+03		2.17e+03	0	1	0	0.000414	0.574	207	
+	  5.93	2.31e+03		2.36e+03	0	1	0	0	0.616	174	
+	  2.94	1.22e+03		1.27e+03	0.000627	0.999	0	0	0.685	114	
+	  2.05	1.1e+03		1.12e+03	0	1	0	0	0.726	66	
+	  2	469		495	0	1	0	0	0.836	42	
+	  1.15	662		671	0	1	0	0	0.836	36	
+	  2.73	378		396	0.000675	0.999	0	0	0.93	36	
+	  1.75	395		404	0	1	0	0	0.945	12	
+	  1.29	259		278	0	1	0	0	1.01	12	
+	  0	266		269	0	0	0	0	0	6	
+	  0.168	62.6		66.9	0	1	0	0	1.18	6	
+	  0.314	87.4		89.2	0	1	0	0	1.21	3	
+	  0.00487	14.2		15	0	1	0	0	1.31	3	
+	  0	42.1		42.1	0	0	0	0	0	0	
+	  0.257	12.6		13.3	0	1	0	0	1.46	0	
+	  0	16.2		16.2	0	0	0	0	0	0	
+	  0	7.97		7.97	0	0	0	0	0	0	
+	  0	8.39		8.39	0	0	0	0	0	0	
+ -- Number of truth particles = 1
+ -- Number of simhits = 1541
+ -- Number of sampling sections = 26
+ -- Gun position set to: 23.2,11.3,-245
+ -- Gun position set to: -57.6,-20.4,-245
+ -- Gun position set to: 1.94,-50.1,-245
+ -- Gun position set to: 25.7,-49.5,-245
+ -- Gun position set to: -14.3,49.1,-245
+ -- Gun position set to: -13.7,-62.8,-245
+ -- Gun position set to: 19.6,-59.1,-245
+ -- Gun position set to: -42.2,-61.9,-245
+ -- Gun position set to: 26.7,47.4,-245
+ -- Gun position set to: -1.77,-45,-245
+
+---> Begin of event: 20
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 17623852, 1120678979
+----------------------------------------
+E/[MeV]	  Si	Absorber	Total	Si g frac	Si e frac	Si mu frac	Si had frac	Si <t> 	 nG4SiHits
+	  10.9	859		950	0.00017	1	0	0	0.129	100	
+	  28.3	3.55e+03		3.74e+03	0.000195	1	0	0	0.18	313	
+	  49.1	6.28e+03		6.76e+03	0.000113	1	0	0	0.251	498	
+	  47.2	9.91e+03		1.02e+04	0.00016	1	0	0	0.291	673	
+	  57.9	8.51e+03		9.03e+03	0.000191	0.998	0	0.00152	0.358	691	
+	  45.6	9.33e+03		9.59e+03	0.000364	1	0	0	0.404	511	
+	  38.4	6.27e+03		6.64e+03	0.00024	1	0	0	0.462	597	
+	  23.7	6.31e+03		6.45e+03	0.000388	1	0	0	0.606	484	
+	  17.8	4.46e+03		4.63e+03	0.000104	1	0	0.000187	0.579	453	
+	  14.7	4.63e+03		4.72e+03	0.000125	1	0	0	0.628	457	
+	  4.9	2.23e+03		2.32e+03	0.00116	0.999	0	0	0.694	303	
+	  3.11	1.96e+03		1.99e+03	0	1	0	0	0.726	236	
+	  4.8	807		859	0	1	0	0	0.815	120	
+	  1.65	1.08e+03		1.09e+03	0	1	0	0	0.843	117	
+	  2.88	549		571	0.000641	0.999	0	0	0.937	66	
+	  1.75	567		579	0	1	0	0	0.945	30	
+	  1.39	362		383	0	1	0	0	1.01	15	
+	  0.185	334		340	0	1	0	0	1.09	3	
+	  0.339	98.2		105	0	1	0	0	1.16	3	
+	  0.314	146		148	0	1	0	0	1.21	0	
+	  0.00487	24.3		26.7	0	1	0	0	1.31	0	
+	  0	51.4		51.4	0	0	0	0	0	0	
+	  0.257	15.6		16.3	0	1	0	0	1.46	0	
+	  0	17.3		17.3	0	0	0	0	0	0	
+	  0	7.97		7.97	0	0	0	0	0	0	
+	  0	8.39		8.39	0	0	0	0	0	0	
+ -- Number of truth particles = 1
+ -- Number of simhits = 1864
+ -- Number of sampling sections = 26
+ -- Gun position set to: 5.9,-1.87,-245
+ -- Gun position set to: 45.6,7.99,-245
+ -- Gun position set to: -50,-36.3,-245
+ -- Gun position set to: 55.8,-61.8,-245
+ -- Gun position set to: -30.1,2.47,-245
+ -- Gun position set to: -22.7,35.2,-245
+ -- Gun position set to: -22.6,24.2,-245
+ -- Gun position set to: 22.5,41.6,-245
+ -- Gun position set to: -27.3,19.8,-245
+ -- Gun position set to: 4.31,21.1,-245
+
+---> Begin of event: 30
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1818759845, 673805435
+----------------------------------------
+E/[MeV]	  Si	Absorber	Total	Si g frac	Si e frac	Si mu frac	Si had frac	Si <t> 	 nG4SiHits
+	  18.2	1.2e+03		1.33e+03	0.00011	1	0	0	0.13	102	
+	  41.4	5.06e+03		5.34e+03	0.000223	1	0	0	0.177	263	
+	  79.3	9.49e+03		1.02e+04	9.3e-05	1	0	0	0.246	835	
+	  72.9	1.5e+04		1.55e+04	0.000131	1	0	0	0.29	838	
+	  85.9	1.22e+04		1.3e+04	0.000215	0.999	0	0.00102	0.357	1042	
+	  68.6	1.38e+04		1.42e+04	0.000295	1	0	0	0.405	745	
+	  59.6	9.55e+03		1.01e+04	0.000278	1	0	0	0.462	606	
+	  31.7	9.34e+03		9.54e+03	0.000407	1	0	0	0.579	415	
+	  29.6	6.49e+03		6.76e+03	0.000124	1	0	0.000112	0.583	390	
+	  25.4	6.51e+03		6.66e+03	0.000364	0.999	0	0.000378	0.655	280	
+	  10.7	3.1e+03		3.24e+03	0.000531	0.999	0	0	0.691	134	
+	  4.73	2.92e+03		2.96e+03	0.00039	1	0	0	0.728	113	
+	  5.91	1.22e+03		1.29e+03	0.000312	1	0	0	0.812	72	
+	  2	1.38e+03		1.39e+03	0	1	0	0	0.871	33	
+	  2.88	666		690	0.000641	0.999	0	0	0.937	21	
+	  1.85	681		693	0	1	0	0	0.945	6	
+	  1.56	431		453	0	1	0	0	1.01	6	
+	  0.434	407		414	0	1	0	0	1.08	6	
+	  0.396	163		170	0	1	0	0	1.15	3	
+	  0.314	196		198	0	1	0	0	1.21	3	
+	  0.00487	38.4		40.8	0	1	0	0	1.31	3	
+	  0	60.1		60.1	0	0	0	0	0	3	
+	  0.257	21.1		21.8	0	1	0	0	1.46	3	
+	  0	17.5		17.5	0	0	0	0	0	0	
+	  0	7.97		7.97	0	0	0	0	0	0	
+	  0	8.39		8.39	0	0	0	0	0	0	
+ -- Number of truth particles = 1
+ -- Number of simhits = 1878
+ -- Number of sampling sections = 26
+ -- Gun position set to: 1.13,18.4,-245
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 16
+ -- Gun position set to: 34.9,12.6,-245
+ -- Gun position set to: -61.7,-38.3,-245
+ -- Gun position set to: -52,3.77,-245
+ -- Gun position set to: -9.83,-39.7,-245
+ -- Gun position set to: -12.7,-11.9,-245
+ -- Gun position set to: -21.3,-48.8,-245
+ -- Gun position set to: 34.4,2.25,-245
+ -- Gun position set to: 21.1,52.9,-245
+ -- Gun position set to: 32.4,0.583,-245
+
+---> Begin of event: 40
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 452734552, 991821272
+----------------------------------------
+E/[MeV]	  Si	Absorber	Total	Si g frac	Si e frac	Si mu frac	Si had frac	Si <t> 	 nG4SiHits
+	  22.1	1.52e+03		1.69e+03	0.000181	1	0	0	0.133	39	
+	  54.3	6.35e+03		6.72e+03	0.000271	1	0	0	0.177	161	
+	  102	1.17e+04		1.26e+04	0.000126	1	0	0	0.247	381	
+	  103	1.86e+04		1.92e+04	0.000165	1	0	0	0.292	593	
+	  107	1.58e+04		1.68e+04	0.000191	0.999	0	0.000823	0.356	556	
+	  86.4	1.77e+04		1.82e+04	0.000235	1	0	0	0.403	469	
+	  74.8	1.25e+04		1.32e+04	0.000246	1	0	0	0.463	707	
+	  43.8	1.22e+04		1.25e+04	0.000421	1	0	0	0.561	774	
+	  46.4	8.98e+03		9.38e+03	0.000162	1	0	7.17e-05	0.583	736	
+	  33.8	9.11e+03		9.31e+03	0.000328	0.999	0	0.000284	0.645	538	
+	  18	4.46e+03		4.66e+03	0.000419	1	0	0	0.696	435	
+	  9.71	4.33e+03		4.41e+03	0.00019	1	0	0	0.741	238	
+	  8.28	1.85e+03		1.96e+03	0.000223	1	0	0	0.811	186	
+	  3.72	1.96e+03		1.99e+03	0.000496	1	0	0	0.863	103	
+	  4.33	1.03e+03		1.07e+03	0.000426	1	0	0	0.923	75	
+	  2.93	1.08e+03		1.1e+03	0	1	0	0	0.947	36	
+	  1.64	559		586	0	1	0	0	1.01	36	
+	  0.442	487		494	0	1	0	0	1.08	18	
+	  0.396	248		256	0	1	0	0	1.15	6	
+	  0.314	239		242	0	1	0	0	1.21	6	
+	  0.00487	55.4		57.8	0	1	0	0	1.31	6	
+	  0	67.9		67.9	0	0	0	0	0	3	
+	  0.355	24.2		25	0	1	0	0	1.45	3	
+	  0	30		30	0	0	0	0	0	0	
+	  0.494	16.3		17.8	0	1	0	0	1.51	0	
+	  0	11.7		11.7	0	0	0	0	0	0	
+ -- Number of truth particles = 1
+ -- Number of simhits = 1806
+ -- Number of sampling sections = 26
+ -- Gun position set to: -35.8,-7.17,-245
+ -- Gun position set to: -58.4,-59.3,-245
+ -- Gun position set to: 58.7,29.8,-245
+ -- Gun position set to: -25.7,4.87,-245
+ -- Gun position set to: -52.9,-59.2,-245
+ -- Gun position set to: 15.7,11.4,-245
+ -- Gun position set to: 52.7,44,-245
+ -- Gun position set to: -45.2,11.2,-245
+ -- Gun position set to: 15.1,-39.8,-245
+ -- Gun position set to: 29.6,31.3,-245
+
+---> Begin of event: 50
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1215701460, 1799881324
+----------------------------------------
+E/[MeV]	  Si	Absorber	Total	Si g frac	Si e frac	Si mu frac	Si had frac	Si <t> 	 nG4SiHits
+	  29.6	1.95e+03		2.21e+03	0.000135	0.832	0	0.168	0.143	60	
+	  69.2	8.19e+03		8.66e+03	0.000213	1	0	0	0.178	190	
+	  136	1.45e+04		1.56e+04	0.000123	1	0	0	0.247	222	
+	  134	2.33e+04		2.42e+04	0.000156	1	0	0	0.292	290	
+	  132	1.97e+04		2.09e+04	0.000197	0.999	0	0.000668	0.356	198	
+	  103	2.17e+04		2.23e+04	0.000232	1	0	0	0.402	380	
+	  90	1.57e+04		1.66e+04	0.000246	1	0	0	0.462	554	
+	  63.1	1.53e+04		1.56e+04	0.00038	1	0	0	0.551	639	
+	  58	1.12e+04		1.17e+04	0.000225	1	0	5.73e-05	0.58	507	
+	  38	1.11e+04		1.13e+04	0.000388	0.999	0	0.000252	0.646	436	
+	  22.2	5.44e+03		5.68e+03	0.000339	1	0	0	0.697	392	
+	  12.5	5.05e+03		5.14e+03	0.000147	1	0	0	0.737	201	
+	  10.4	2.13e+03		2.25e+03	0.000178	1	0	0	0.815	226	
+	  4.59	2.27e+03		2.3e+03	0.000402	1	0	0	0.858	120	
+	  5.8	1.18e+03		1.23e+03	0.000318	1	0	0	0.917	134	
+	  4.11	1.39e+03		1.42e+03	0	1	0	0	0.947	123	
+	  2.05	704		735	0	1	0	0	1.01	185	
+	  0.542	585		594	0	1	0	0	1.08	99	
+	  0.538	299		308	0	1	0	0	1.16	45	
+	  0.39	278		281	0	1	0	0	1.2	22	
+	  0.00487	65		67.6	0	1	0	0	1.31	21	
+	  0	73.2		73.2	0	0	0	0	0	15	
+	  0.355	26		26.9	0	1	0	0	1.45	9	
+	  0	42.4		42.4	0	0	0	0	0	3	
+	  0.494	17.9		19.4	0	1	0	0	1.51	3	
+	  0	11.7		11.7	0	0	0	0	0	0	
+ -- Number of truth particles = 1
+ -- Number of simhits = 1952
+ -- Number of sampling sections = 26
+ -- Gun position set to: 50,19.8,-245
+ -- Gun position set to: 9.4,-6.88,-245
+ -- Gun position set to: 49.4,-55.7,-245
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 242
+ -- Gun position set to: 39.4,56.2,-245
+ -- Gun position set to: 14.9,-56,-245
+ -- Gun position set to: -24.2,9.71,-245
+ -- Gun position set to: 30.1,-33.7,-245
+ -- Gun position set to: -49,48,-245
+ -- Gun position set to: 3.67,10.2,-245
+ -- Gun position set to: 14.7,-33.4,-245
+
+---> Begin of event: 60
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 882678470, 1712957241
+----------------------------------------
+E/[MeV]	  Si	Absorber	Total	Si g frac	Si e frac	Si mu frac	Si had frac	Si <t> 	 nG4SiHits
+	  33.2	2.38e+03		2.67e+03	0.000176	0.849	0	0.151	0.143	143	
+	  81.2	9.46e+03		9.99e+03	0.000182	0.998	0	0.00171	0.202	266	
+	  152	1.63e+04		1.76e+04	0.000122	1	0	0	0.247	346	
+	  155	2.66e+04		2.76e+04	0.000159	1	0	0.0002	0.294	325	
+	  153	2.3e+04		2.44e+04	0.000194	0.999	0	0.000574	0.355	490	
+	  127	2.6e+04		2.68e+04	0.000249	1	0	0.000142	0.402	585	
+	  112	1.93e+04		2.04e+04	0.000198	1	0	0.000117	0.47	562	
+	  76.8	1.87e+04		1.92e+04	0.000336	1	0	0	0.542	466	
+	  69.3	1.37e+04		1.43e+04	0.000295	1	0	4.8e-05	0.579	418	
+	  47.4	1.35e+04		1.38e+04	0.00035	0.999	0	0.000202	0.644	505	
+	  30.3	6.68e+03		6.99e+03	0.000254	1	0	0	0.692	343	
+	  16.7	6.66e+03		6.77e+03	0.000111	1	0	0	0.735	411	
+	  13.6	2.8e+03		2.95e+03	0.000271	1	0	0	0.839	336	
+	  5.83	2.88e+03		2.92e+03	0.000949	0.999	0	0	0.858	172	
+	  7.73	1.48e+03		1.55e+03	0.000239	1	0	0	0.918	193	
+	  4.29	1.71e+03		1.74e+03	0	1	0	0	0.947	78	
+	  3.37	863		900	0	1	0	0	1.02	95	
+	  0.542	731		741	0	1	0	0	1.08	54	
+	  0.538	330		340	0	1	0	0	1.16	27	
+	  0.39	367		369	0	1	0	0	1.2	12	
+	  0.00487	76.5		79	0	1	0	0	1.31	15	
+	  0	86.4		86.4	0	0	0	0	0	6	
+	  0.355	26.4		27.2	0	1	0	0	1.45	3	
+	  0	47.4		47.8	0	0	0	0	0	3	
+	  0.494	27.8		30.7	0	1	0	0	1.51	3	
+	  0	12		12	0	0	0	0	0	0	
+ -- Number of truth particles = 1
+ -- Number of simhits = 1990
+ -- Number of sampling sections = 26
+ -- Gun position set to: 25.3,-37,-245
+ -- Gun position set to: 17.7,35.5,-245
+ -- Gun position set to: 26.9,-53.6,-245
+ -- Gun position set to: -52.5,-64,-245
+ -- Gun position set to: 39.3,44.4,-245
+ -- Gun position set to: -42.6,32,-245
+ -- Gun position set to: -23.2,-14.7,-245
+ -- Gun position set to: -62.1,-16.2,-245
+ -- Gun position set to: 21.2,34,-245
+ -- Gun position set to: 51,-50.1,-245
+
+---> Begin of event: 70
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 98643944, 330010368
+----------------------------------------
+E/[MeV]	  Si	Absorber	Total	Si g frac	Si e frac	Si mu frac	Si had frac	Si <t> 	 nG4SiHits
+	  38.7	2.71e+03		3.04e+03	0.000246	0.871	0	0.129	0.141	75	
+	  91.4	1.09e+04		1.15e+04	0.000182	0.998	0	0.00152	0.199	223	
+	  178	1.88e+04		2.03e+04	0.000115	1	0	0	0.245	306	
+	  181	3.13e+04		3.24e+04	0.000156	1	0	0.000172	0.292	617	
+	  179	2.68e+04		2.85e+04	0.000217	0.999	0	0.000491	0.355	839	
+	  156	3.04e+04		3.13e+04	0.000227	1	0	0.000115	0.404	1014	
+	  132	2.26e+04		2.39e+04	0.000198	1	0	9.87e-05	0.469	935	
+	  89.9	2.21e+04		2.26e+04	0.00033	1	0	0	0.543	772	
+	  80.6	1.6e+04		1.67e+04	0.000277	0.999	0	0.000583	0.592	613	
+	  55	1.57e+04		1.61e+04	0.000402	0.999	0	0.000174	0.641	385	
+	  33.4	7.61e+03		7.96e+03	0.00023	1	0	0	0.692	249	
+	  23.6	7.67e+03		7.82e+03	0.000235	1	0	0	0.741	168	
+	  14.8	3.19e+03		3.36e+03	0.000249	1	0	0	0.836	90	
+	  6.59	3.34e+03		3.39e+03	0.000839	0.999	0	0	0.856	69	
+	  8.02	1.68e+03		1.75e+03	0.00023	1	0	0	0.919	45	
+	  4.61	1.85e+03		1.89e+03	0	1	0	0	0.947	21	
+	  4.07	913		955	0.000453	1	0	0	1.02	9	
+	  0.542	836		846	0	1	0	0	1.08	9	
+	  0.538	369		380	0	1	0	0	1.16	9	
+	  0.39	389		393	0	1	0	0	1.2	3	
+	  0.00487	87.2		89.9	0	1	0	0	1.31	0	
+	  0	101		101	0	0	0	0	0	0	
+	  0.355	26.4		27.2	0	1	0	0	1.45	0	
+	  0	47.4		47.8	0	0	0	0	0	0	
+	  0.494	27.8		30.7	0	1	0	0	1.51	0	
+	  0	12		12	0	0	0	0	0	0	
+ -- Number of truth particles = 1
+ -- Number of simhits = 1608
+ -- Number of sampling sections = 26
+ -- Gun position set to: -47.4,49.4,-245
+ -- Gun position set to: -20.7,-28.2,-245
+ -- Gun position set to: 56.1,-8.65,-245
+ -- Gun position set to: -54.3,25.7,-245
+ -- Gun position set to: 21.3,-56.1,-245
+ -- Gun position set to: -9.45,61.8,-245
+-- SamplingSection::resetCounters(), space reserved for HitVec vector increased to 40
+ -- Gun position set to: 42.4,34.2,-245
+ -- Gun position set to: 13.3,3.26,-245
+ -- Gun position set to: -0.704,2.88,-245
+ -- Gun position set to: -33.1,53,-245
+
+---> Begin of event: 80
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 1233401591, 706120295
+----------------------------------------
+E/[MeV]	  Si	Absorber	Total	Si g frac	Si e frac	Si mu frac	Si had frac	Si <t> 	 nG4SiHits
+	  43.1	3.13e+03		3.5e+03	0.000221	0.884	0	0.116	0.139	44	
+	  110	1.25e+04		1.32e+04	0.000218	0.999	0	0.00126	0.197	121	
+	  201	2.15e+04		2.32e+04	0.000111	1	0	0.000108	0.245	317	
+	  205	3.59e+04		3.71e+04	0.000147	1	0	0.000152	0.292	366	
+	  209	3.05e+04		3.24e+04	0.000195	0.999	0	0.000419	0.355	531	
+	  177	3.48e+04		3.59e+04	0.000231	1	0	0.000101	0.403	411	
+	  151	2.58e+04		2.72e+04	0.000222	1	0	8.64e-05	0.467	447	
+	  99.2	2.5e+04		2.57e+04	0.000299	1	0	0	0.539	311	
+	  92.6	1.85e+04		1.94e+04	0.000282	0.999	0	0.00104	0.589	244	
+	  63.4	1.82e+04		1.86e+04	0.000378	0.999	0	0.000151	0.639	183	
+	  36.8	8.67e+03		9.06e+03	0.000209	1	0	0	0.691	215	
+	  27.4	8.57e+03		8.73e+03	0.000336	0.999	0	0.000547	0.787	175	
+	  16.2	3.7e+03		3.88e+03	0.000228	1	0	0	0.833	119	
+	  8.21	3.68e+03		3.74e+03	0.000898	0.999	0	0	0.854	57	
+	  8.62	1.92e+03		2e+03	0.000214	1	0	0	0.925	36	
+	  4.87	1.99e+03		2.03e+03	0.000379	1	0	0	0.949	39	
+	  4.13	1.04e+03		1.08e+03	0.000446	1	0	0	1.02	21	
+	  1.25	934		946	0.00147	0.999	0	0	1.07	91	
+	  0.538	452		463	0	1	0	0	1.16	15	
+	  0.58	409		414	0	1	0	0	1.21	6	
+	  0.00487	92.1		94.8	0	1	0	0	1.31	3	
+	  0	114		114	0	0	0	0	0	0	
+	  0.355	28.4		29.3	0	1	0	0	1.45	0	
+	  0	49.8		50.3	0	0	0	0	0	0	
+	  0.494	27.8		30.7	0	1	0	0	1.51	0	
+	  0	19.3		19.3	0	0	0	0	0	0	
+ -- Number of truth particles = 1
+ -- Number of simhits = 1273
+ -- Number of sampling sections = 26
+ -- Gun position set to: 39.6,1.41,-245
+ -- Gun position set to: -12.8,40.2,-245
+ -- Gun position set to: 44.6,-43,-245
+ -- Gun position set to: 7.91,46.7,-245
+ -- Gun position set to: 13.3,-41.1,-245
+ -- Gun position set to: -49.5,38.4,-245
+ -- Gun position set to: 56,59.2,-245
+ -- Gun position set to: 37.2,28.1,-245
+ -- Gun position set to: -56.6,-19.7,-245
+ -- Gun position set to: 32.8,-58,-245
+
+---> Begin of event: 90
+
+--------- Ranecu engine status ---------
+ Initial seed (index) = 0
+ Current couple of seeds = 480581698, 1012485050
+----------------------------------------
+E/[MeV]	  Si	Absorber	Total	Si g frac	Si e frac	Si mu frac	Si had frac	Si <t> 	 nG4SiHits
+	  49.3	3.57e+03		3.98e+03	0.000193	0.899	0	0.101	0.143	234	
+	  121	1.38e+04		1.46e+04	0.000213	0.999	0	0.00114	0.196	259	
+	  221	2.38e+04		2.56e+04	0.000134	1	0	9.83e-05	0.245	316	
+	  229	3.97e+04		4.11e+04	0.000148	1	0	0.000136	0.291	337	
+	  234	3.44e+04		3.66e+04	0.000199	0.999	0	0.000375	0.354	544	
+	  202	3.92e+04		4.04e+04	0.00022	1	0	8.88e-05	0.402	888	
+	  175	2.92e+04		3.08e+04	0.000234	1	0	7.46e-05	0.466	776	
+	  113	2.83e+04		2.91e+04	0.000278	1	0	0	0.535	665	
+	  106	2.09e+04		2.18e+04	0.000265	0.999	0	0.000911	0.587	435	
+	  72.5	2.08e+04		2.13e+04	0.000331	1	0	0.000132	0.635	297	
+	  44.8	1.01e+04		1.06e+04	0.000254	1	0	0	0.69	261	
+	  32.4	9.83e+03		1e+04	0.000285	0.999	0	0.000463	0.778	120	
+	  18.5	4.35e+03		4.56e+03	0.0002	1	0	0	0.834	114	
+	  9.33	4.35e+03		4.41e+03	0.00079	0.999	0	0	0.853	48	
+	  8.96	2.18e+03		2.26e+03	0.000206	1	0	0	0.926	33	
+	  5.19	2.28e+03		2.31e+03	0.000355	1	0	0	0.955	53	
+	  4.66	1.17e+03		1.22e+03	0.000395	1	0	0	1.02	6	
+	  1.25	1.02e+03		1.03e+03	0.00147	0.999	0	0	1.08	3	
+	  0.538	508		519	0	1	0	0	1.16	6	
+	  0.92	438		443	0	1	0	0	1.2	0	
+	  0.00487	130		134	0	1	0	0	1.31	0	
+	  0.0504	154		155	0	1	0	0	1.34	0	
+	  0.355	31.5		32.5	0	1	0	0	1.45	0	
+	  0	53.2		53.8	0	0	0	0	0	0	
+	  0.494	28.5		31.4	0	1	0	0	1.51	0	
+	  0	22.8		22.8	0	0	0	0	0	0	
+ -- Number of truth particles = 1
+ -- Number of simhits = 1514
+ -- Number of sampling sections = 26
+ -- Gun position set to: 20.3,-38.4,-245
+ -- Gun position set to: 57.5,-7.62,-245
+ -- Gun position set to: -49.8,-3.55,-245
+ -- Gun position set to: 43.1,-16.5,-245
+ -- Gun position set to: -11.4,60.2,-245
+ -- Gun position set to: -30.5,46.6,-245
+ -- Gun position set to: -37.5,34.6,-245
+ -- Gun position set to: 43.5,-17.8,-245
+ -- Gun position set to: -32.1,-40.3,-245
+
+--------------------End of Run------------------------------
+ -- Number of events processed = 100
+
+Graphics systems deleted.
+Visualization Manager deleting...
+--Local directory is  /pool/lsf/ocolegro/800614356
+1463258620.800614356.out
+currentEvent.rndm
+currentRun.rndm
+G4History.macro
+g4.log
+g4steer.mac
+HGcal__version30_model0_BOFF_et30_eta10000.000_run12.root
+ --- Problem with copy of file PFcal.root to EOS. Keeping locally.

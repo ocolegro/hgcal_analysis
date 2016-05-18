@@ -1,0 +1,44 @@
+/run/verbose 0
+/event/verbose 0
+/tracking/verbose 0
+/N03/det/setField 0.0 T
+/N03/det/setModel 0
+/random/setSeeds 3422 27581
+/generator/select particleGun
+/gun/particle e-
+/gun/energy 30.000000 GeV
+/gun/direction 0.000000 0.000000 1.000000
+/run/beamOn 100
+/run/particle/addProcManager Cu63[0.0]
+/run/particle/addProcManager Cu65[0.0]
+/run/particle/addProcManager W182[0.0]
+/run/particle/addProcManager W181[0.0]
+/run/particle/addProcManager Ni62[0.0]
+/run/particle/addProcManager W184[0.0]
+/run/particle/addProcManager W185[0.0]
+/run/particle/addProcManager Cu62[0.0]
+/run/particle/addProcManager C12[0.0]
+/run/particle/addProcManager Si28[0.0]
+/run/particle/addProcManager Si29[0.0]
+/run/particle/addProcManager Si30[0.0]
+/run/particle/addProcManager O16[0.0]
+/run/particle/addProcManager O17[0.0]
+/run/particle/addProcManager O18[0.0]
+/run/particle/addProcManager C13[0.0]
+/run/particle/addProcManager Br79[0.0]
+/run/particle/addProcManager Br81[0.0]
+/run/particle/addProcManager W180[0.0]
+/run/particle/addProcManager W183[0.0]
+/run/particle/addProcManager W186[0.0]
+/run/particle/addProcManager Ni61[0.0]
+/run/particle/addProcManager Cu64[0.0]
+/run/particle/addProcManager W187[0.0]
+/run/particle/addProcManager Cu66[0.0]
+/run/particle/addProcManager Cu61[0.0]
+/run/particle/addProcManager Ni63[0.0]
+/run/particle/addProcManager Ni58[0.0]
+/run/particle/addProcManager Hf182[0.0]
+/run/particle/addProcManager Hf178[0.0]
+/run/particle/addProcManager Ta182[0.0]
+/run/particle/addProcManager Ta172[0.0]
+/run/particle/addProcManager N14[0.0]
