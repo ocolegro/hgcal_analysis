@@ -116,7 +116,7 @@ public:
   /**
   *  @short set parameterized magnetic field 
   *  **/
-  void SetMagField(std::string fileName, G4double zOffset);
+  void SetMagField(string fileName, G4double zOffset);
   G4UniformMagField* m_magField;      //pointer to the magnetic field
 
   /**

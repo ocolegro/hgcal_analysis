@@ -33,7 +33,7 @@ using namespace std;
 DetectorConstruction::DetectorConstruction(G4int ver, G4int mod,
 					   std::string absThickW,
 					   std::string absThickPb,
-					   std::string dropLayer) :
+					   std::string dropLayer) : 
   version_(ver), model_(mod), addPrePCB_(false)
 {
   SetWThick(absThickW);
@@ -47,38 +47,32 @@ DetectorConstruction::DetectorConstruction(G4int ver, G4int mod,
 	G4cout << "[DetectorConstruction] starting v_HGCALEE_v6"<< G4endl;
 	G4double airThick = 2*mm;
 	G4double pcbThick = 2*mm;
+        unsigned Nmodule=4;
 	G4double wThick = 2.*mm;
 	G4double wcuThick = 0.6*mm;
-
-
-	std::vector<std::string> iEle;
-    std::vector<G4double> iThick;
-	iThick.push_back(.3504*mm);iEle.push_back("W");
-
-	iThick.push_back(20*cm);iEle.push_back("G4_Galactic");
-
-	m_caloStruct.push_back( SamplingSection(iThick,iEle) );
-
-    std::vector<G4double> lThickL;
+	
+        std::vector<G4double> lThickL;
 	std::vector<std::string> lEleL;
 	std::vector<G4double> lThickR;
 	std::vector<std::string> lEleR;
-
+	
 	lThickR.push_back(wcuThick);lEleR.push_back("WCu");
 	lThickR.push_back(6*mm);lEleR.push_back("Cu");
 	lThickR.push_back(wcuThick);lEleR.push_back("WCu");
-	lThickR.push_back(0.*mm);lEleR.push_back("Steel");
+	//Try adding steel, it greatly improves neutron detection
+	//lThickR.push_back(6*mm);lEleR.push_back("Steel");
 	lThickR.push_back(0.1*mm);lEleR.push_back("Si");
 	lThickR.push_back(0.1*mm);lEleR.push_back("Si");
 	lThickR.push_back(0.1*mm);lEleR.push_back("Si");
 	lThickR.push_back(pcbThick);lEleR.push_back("PCB");
 	lThickR.push_back(airThick);lEleR.push_back("Air");
-
+	
 	lThickL.push_back(0.5*mm);lEleL.push_back("Cu");
 	lThickL.push_back(0.5*mm);lEleL.push_back("CFMix");
 	lThickL.push_back(wThick);lEleL.push_back("W");
 	//Try adding steel, it greatly improves neutron detection
-	lThickL.push_back(0.*mm);lEleL.push_back("Steel");
+	//lThickL.push_back(6*mm);lEleL.push_back("Steel");
+
 	lThickL.push_back(0.5*mm);lEleL.push_back("CFMix");
 	lThickL.push_back(0.5*mm);lEleL.push_back("Cu");
 	lThickL.push_back(airThick);lEleL.push_back("Air");
@@ -86,25 +80,33 @@ DetectorConstruction::DetectorConstruction(G4int ver, G4int mod,
 	lThickL.push_back(0.1*mm);lEleL.push_back("Si");
 	lThickL.push_back(0.1*mm);lEleL.push_back("Si");
 	lThickL.push_back(0.1*mm);lEleL.push_back("Si");
-
-    unsigned Nmodule=4;
 	for(unsigned i=0; i<Nmodule; i++) {
 	  m_caloStruct.push_back( SamplingSection(lThickL,lEleL) );
 	  m_caloStruct.push_back( SamplingSection(lThickR,lEleR) );
 	}
 
-    Nmodule=5;
+        Nmodule=5;
 	lThickL[2] = 2.8*mm;
 	lThickR[0] = 1.2*mm;
 	lThickR[2] = 1.2*mm;
-
-
+        if(version_ == v_HGCALEE_v624 || version_ == v_HGCAL_v624){
+            Nmodule=4;
+            lThickL[2] = 3.6*mm;
+            lThickR[0] = 1.75*mm;
+            lThickR[2] = 1.75*mm;
+        }
+        else if(version_ == v_HGCALEE_v618 || version_ == v_HGCAL_v618){
+            Nmodule=3;
+            lThickL[2] = 4.9*mm;
+            lThickR[0] = 2.7*mm;
+            lThickR[2] = 2.7*mm;
+        }
 	for(unsigned i=0; i<Nmodule; i++) {
 	  m_caloStruct.push_back( SamplingSection(lThickL,lEleL) );
 	  m_caloStruct.push_back( SamplingSection(lThickR,lEleR) );
 	}
 
-    Nmodule=4;
+        Nmodule=4;
 	lThickL[2] = 4.2*mm;
 	lThickR[0] = 2.2*mm;
 	lThickR[2] = 2.2*mm;
@@ -112,8 +114,22 @@ DetectorConstruction::DetectorConstruction(G4int ver, G4int mod,
 	  m_caloStruct.push_back( SamplingSection(lThickL,lEleL) );
 	  m_caloStruct.push_back( SamplingSection(lThickR,lEleR) );
 	}
-
-
+	
+	if(version_==v_HGCAL_v6){
+	  //add HCAL
+	  buildHGCALFHE(6);
+	  buildHGCALBHE(6);
+	}
+	else if(version_==v_HGCAL_v624){
+	  //add HCAL
+	  buildHGCALFHE(624);
+	  buildHGCALBHE(6);
+	}
+	else if(version_==v_HGCAL_v618){
+	  //add HCAL
+	  buildHGCALFHE(618);
+	  buildHGCALBHE(6);
+	}
 
 	break;
       }
@@ -128,24 +144,144 @@ DetectorConstruction::DetectorConstruction(G4int ver, G4int mod,
   UpdateCalorSize();
 }
 
+void DetectorConstruction::buildHGCALFHE(const unsigned aVersion){
+  G4double airThick = 2*mm;
+  if(version_==v_HGCAL_v5_gap4) airThick = 4*mm;
+  std::vector<G4double> lThick;
+  std::vector<std::string> lEle;
+  if(aVersion==6 || aVersion==624 || aVersion==618) {
+    airThick = 2*mm;
+    G4double pcbthick = 2*mm;
+    G4double brassthick = aVersion==618? 62*mm : 35*mm;
+    //putting all absorber in front of each Si layer to have correct reweighting
+    lThick.push_back(0.5*mm); lEle.push_back("Cu");
+    lThick.push_back(15.*mm);lEle.push_back("SSteel");
+    lThick.push_back(brassthick);lEle.push_back("Brass");
+    lThick.push_back(0.5*mm); lEle.push_back("Cu");
+    lThick.push_back(airThick);lEle.push_back("Air");
+    lThick.push_back(pcbthick);lEle.push_back("PCB");
+    lThick.push_back(0.1*mm);lEle.push_back("Si");
+    lThick.push_back(0.1*mm);lEle.push_back("Si");
+    lThick.push_back(0.1*mm);lEle.push_back("Si");
+    m_caloStruct.push_back( SamplingSection(lThick,lEle) );
 
+    lThick.clear();
+    lEle.clear();
+    lThick.push_back(1.);lEle.push_back("CFMix");
+    lThick.push_back(6.); lEle.push_back("Cu");
+    lThick.push_back(brassthick);lEle.push_back("Brass");
+    lThick.push_back(0.5*mm); lEle.push_back("Cu");
+    lThick.push_back(airThick);lEle.push_back("Air");
+    lThick.push_back(pcbthick);lEle.push_back("PCB");
+    lThick.push_back(0.1*mm);lEle.push_back("Si");
+    lThick.push_back(0.1*mm);lEle.push_back("Si");
+    lThick.push_back(0.1*mm);lEle.push_back("Si");
+    for(unsigned i=0; i<5; i++) {
+      m_caloStruct.push_back( SamplingSection(lThick,lEle) );
+    }
+    unsigned nLay = aVersion==618? 3 : aVersion==624 ? 5 : 6;
+    lThick[2] = aVersion==624 ? 55*mm : brassthick;
+    for(unsigned i=0; i<nLay; i++) {
+      m_caloStruct.push_back( SamplingSection(lThick,lEle) );
+    }
+
+
+  }
+  else {
+    G4double pcbthick = (aVersion==4)? 2*mm : 1.2*mm;
+    //add last ECAL layer structure
+    lThick.push_back(3*mm);lEle.push_back("Cu");
+    lThick.push_back(1*mm);lEle.push_back("Pb");
+    lThick.push_back(15.*mm);lEle.push_back("SSteel");
+    if (aVersion==41) {lThick.push_back(52.*mm);lEle.push_back("Pb");}
+    else {lThick.push_back(40.*mm);lEle.push_back("Brass");}
+    lThick.push_back(0.5*mm); lEle.push_back("Cu");
+    lThick.push_back(airThick);lEle.push_back("Air");
+    lThick.push_back(pcbthick);lEle.push_back("PCB");
+    lThick.push_back(0.1*mm);lEle.push_back("Si");
+    lThick.push_back(0.1*mm);lEle.push_back("Si");
+    lThick.push_back(0.1*mm);lEle.push_back("Si");
+    m_caloStruct.push_back( SamplingSection(lThick,lEle) );
+
+    //next 11 layers
+    lThick.clear(); lEle.clear();
+    lThick.push_back(3*mm); lEle.push_back("Cu");
+    lThick.push_back(1*mm); lEle.push_back("Pb");
+    if (aVersion==41) {lThick.push_back(52.*mm);lEle.push_back("Pb");}
+    else {lThick.push_back(40.*mm);lEle.push_back("Brass");}
+    lThick.push_back(0.5*mm); lEle.push_back("Cu");
+    lThick.push_back(airThick);lEle.push_back("Air");
+    lThick.push_back(pcbthick);lEle.push_back("PCB");
+    lThick.push_back(0.1*mm);lEle.push_back("Si");
+    lThick.push_back(0.1*mm);lEle.push_back("Si");
+    lThick.push_back(0.1*mm);lEle.push_back("Si");
+    
+    for(unsigned i=0; i<11; i++) {
+      m_caloStruct.push_back( SamplingSection(lThick,lEle) );
+    }
+  }
+}
+//
+void DetectorConstruction::buildHGCALBHE(const unsigned aVersion){
+  std::vector<G4double> lThick;
+  std::vector<std::string> lEle;
+  //first layer
+  if (aVersion==6){
+    lThick.push_back(1.*mm);lEle.push_back("CFMix");
+    lThick.push_back(6.*mm); lEle.push_back("Cu");
+  } else {
+    lThick.push_back(3*mm); lEle.push_back("Cu");
+    lThick.push_back(1*mm); lEle.push_back("Pb");
+  }
+  lThick.push_back(2.*mm);lEle.push_back("Al");
+  lThick.push_back(16.*mm);lEle.push_back("Foam");
+  lThick.push_back(2.*mm);lEle.push_back("Al");
+  lThick.push_back(65.*mm);lEle.push_back("Air");
+  lThick.push_back(78.*mm);lEle.push_back("Brass");
+  if (aVersion==6) {
+    lThick.push_back(2.6*mm);lEle.push_back("Air");
+    lThick.push_back(3.8*mm);lEle.push_back("Scintillator");
+    lThick.push_back(2.6*mm);lEle.push_back("Air");
+  }
+  else {
+    lThick.push_back(9.*mm);lEle.push_back("Scintillator");
+  }
+  m_caloStruct.push_back( SamplingSection(lThick,lEle) );
+
+  //other layers
+  lThick.clear();lEle.clear();
+  lThick.push_back(78.*mm);lEle.push_back("Brass");
+  if (aVersion==6) {
+    lThick.push_back(2.6*mm);lEle.push_back("Air");
+    lThick.push_back(3.8*mm);lEle.push_back("Scintillator");
+    lThick.push_back(2.6*mm);lEle.push_back("Air");
+  }
+  else {
+    lThick.push_back(9.*mm);lEle.push_back("Scintillator");
+  }
+
+  unsigned maxi = (aVersion==4)?9:11;
+  for(unsigned i=0; i<maxi; i++) {
+    m_caloStruct.push_back( SamplingSection(lThick,lEle) );
+  }
+}
 //
 DetectorConstruction::~DetectorConstruction() { delete m_detectorMessenger;}
 
 //
 void DetectorConstruction::DefineMaterials()
-{
+{ 
   G4NistManager* nistManager = G4NistManager::Instance();
-  m_materials["Abs"] = (version_== v_CALICE || version_==v_HGCALEE_W) ?
+  m_materials["Abs"] = (version_== v_CALICE || version_==v_HGCALEE_W) ? 
     nistManager->FindOrBuildMaterial("G4_W",false) :
     nistManager->FindOrBuildMaterial("G4_Pb",false);
   m_materials["Al"] = nistManager->FindOrBuildMaterial("G4_Al",false);
   m_dEdx["Al"] = 0.4358;
-  m_materials["W"] = nistManager->FindOrBuildMaterial("G4_W",false);
+  m_materials["W"] = nistManager->FindOrBuildMaterial("G4_W",false); 
   m_dEdx["W"] = 2.210;
-  m_materials["Pb"] = nistManager->FindOrBuildMaterial("G4_Pb",false);
+  m_materials["Pb"] = nistManager->FindOrBuildMaterial("G4_Pb",false); 
   m_dEdx["Pb"] = 1.274;
-  m_materials["Cu"] = nistManager->FindOrBuildMaterial("G4_Cu",false);
+  m_materials["Cu"] = nistManager->FindOrBuildMaterial("G4_Cu",false); 
   m_dEdx["Cu"] = 1.257;
   m_materials["Si"] = nistManager->FindOrBuildMaterial("G4_Si",false);
   m_dEdx["Si"] = 0.3876;
@@ -153,21 +289,19 @@ void DetectorConstruction::DefineMaterials()
   m_dEdx["Zn"] = 1.007;
   m_materials["Air"]=nistManager->FindOrBuildMaterial("G4_AIR",false);
   m_dEdx["Air"] = 0;
-  m_materials["G4_Galactic"]=nistManager->FindOrBuildMaterial("G4_Galactic",false);
-  m_dEdx["G4_Galactic"] = 0;
   m_materials["Fe"] = nistManager->FindOrBuildMaterial("G4_Fe",false);
   m_dEdx["Fe"] = 1.143;
   m_materials["Mn"] = nistManager->FindOrBuildMaterial("G4_Mn",false);
   m_dEdx["Mn"] = 1.062 ;
-  m_materials["C"] = nistManager->FindOrBuildMaterial("G4_C",false);
+  m_materials["C"] = nistManager->FindOrBuildMaterial("G4_C",false); 
   m_dEdx["C"] = 0.3952;
-  m_materials["H"] = nistManager->FindOrBuildMaterial("G4_H",false);
+  m_materials["H"] = nistManager->FindOrBuildMaterial("G4_H",false); 
   m_dEdx["H"] =  0;
-  m_materials["Cl"] = nistManager->FindOrBuildMaterial("G4_Cl",false);
+  m_materials["Cl"] = nistManager->FindOrBuildMaterial("G4_Cl",false); 
   m_dEdx["Cl"] = 0;
-  m_materials["Cr"] = nistManager->FindOrBuildMaterial("G4_Cr",false);
+  m_materials["Cr"] = nistManager->FindOrBuildMaterial("G4_Cr",false); 
   m_dEdx["Cr"] = 1.046;
-  m_materials["Ni"] = nistManager->FindOrBuildMaterial("G4_Ni",false);
+  m_materials["Ni"] = nistManager->FindOrBuildMaterial("G4_Ni",false); 
   m_dEdx["Ni"] = 1.307;
   m_materials["O"] = nistManager->FindOrBuildMaterial("G4_O",false);
   m_materials["Br"] = nistManager->FindOrBuildMaterial("G4_Br",false);
@@ -207,7 +341,7 @@ void DetectorConstruction::DefineMaterials()
   m_dEdx["AbsHCAL"] = (version_== v_HGCALHE_CALICE) ?
     m_dEdx["Steel"]:
     m_dEdx["Brass"];
-  //m_materials["Scintillator"]= nistManager->FindOrBuildMaterial("G4_POLYSTYRENE",false);
+  //m_materials["Scintillator"]= nistManager->FindOrBuildMaterial("G4_POLYSTYRENE",false); 
   m_materials["Scintillator"]= new G4Material("Scintillator",1.032*g/cm3,2);
   m_materials["Scintillator"]->AddMaterial(m_materials["C"]  , 91.512109*perCent);
   m_materials["Scintillator"]->AddMaterial(m_materials["H"]  , 8.4878906*perCent);
@@ -255,10 +389,10 @@ void DetectorConstruction::DefineMaterials()
 }
 
 //
-void DetectorConstruction::UpdateCalorSize(){
+void DetectorConstruction::UpdateCalorSize(){  
 
   m_CalorSizeZ=0;
-
+  
   for(size_t i=0; i<m_caloStruct.size(); i++){
     m_CalorSizeZ=m_CalorSizeZ+m_caloStruct[i].Total_thick;
   }
@@ -283,26 +417,49 @@ void DetectorConstruction::UpdateCalorSize(){
     m_interSectorWidth = 10;
     m_CalorSizeXY=m_nSectors*m_sectorWidth;
   }
-
+  else if (model_ == DetectorConstruction::m_2016TB ){
+    m_nSectors    = 1;
+    m_sectorWidth = CELL_SIZE_X * 2 *11;
+    m_interSectorWidth = 0;
+    m_CalorSizeXY = m_sectorWidth;
+    m_minRadius   = m_CalorSizeXY/(2*sqrt(3)); // center-to-side radius of hexagon
+    m_maxRadius   = m_CalorSizeXY/2.;          // center-to-corner radius of hexagon
+  }
+  else if (model_ == DetectorConstruction::m_FULLSECTION){
+    m_CalorSizeXY=2800;//1700;
+    m_minRadius = 150;
+    m_maxRadius = m_CalorSizeXY;
+    m_minEta = 1.4;
+    m_maxEta = 3.7;
+    m_sectorWidth = 2.*pi;//2.*pi/m_nSectors;
+    m_interSectorWidth = 0;//0.2*pi/180.;
+    m_z0pos = 2990;//3170;
+    if (version_ == v_HGCALEE_v5 || version_ == v_HGCAL_v5 || version_ == v_HGCALEE_v5_gap4 || version_ == v_HGCAL_v5_gap4) m_z0pos = 2990;//3170;
+    else if (version_ == v_HGCALEE_v6 || version_ == v_HGCAL_v6 || version_ == v_HGCALEE_v624 || version_ == v_HGCALEE_v618) m_z0pos = 3070;
+  }
+  else {
+    m_CalorSizeXY=200;
+    m_sectorWidth = m_CalorSizeXY;
+  }
 
   for(size_t i=0; i<m_caloStruct.size(); i++) m_caloStruct[i].setNumberOfSectors(m_nSectors);
 
-  m_WorldSizeZ=m_CalorSizeZ*1.1;
+  m_WorldSizeZ=m_CalorSizeZ*1.1;  
   if (m_nSectors>1) m_WorldSizeXY=(m_CalorSizeXY+2*m_sectorWidth)*1.1;
   else m_WorldSizeXY=m_CalorSizeXY*1.1;
 
-  if (model_ == DetectorConstruction::m_FULLSECTION || model_ == DetectorConstruction::m_2016TB)
-    G4cout << "[DetectorConstruction][UpdateCalorSize] Z x minR * maxR = "
-	   << m_CalorSizeZ << " x "
-	   << m_minRadius << " x "
-	   << m_maxRadius
+  if (model_ == DetectorConstruction::m_FULLSECTION || model_ == DetectorConstruction::m_2016TB) 
+    G4cout << "[DetectorConstruction][UpdateCalorSize] Z x minR * maxR = " 
+	   << m_CalorSizeZ << " x " 
+	   << m_minRadius << " x " 
+	   << m_maxRadius 
 	   << " mm, eta range "
-	   << m_minEta << " - "
+	   << m_minEta << " - " 
 	   << m_maxEta << " nsectors = " << m_nSectors
 	   << G4endl;
-  else G4cout << "[DetectorConstruction][UpdateCalorSize] Z x XY = "
-	      << m_CalorSizeZ << " x "
-	      << m_CalorSizeXY << " mm "
+  else G4cout << "[DetectorConstruction][UpdateCalorSize] Z x XY = " 
+	      << m_CalorSizeZ << " x " 
+	      << m_CalorSizeXY << " mm " 
 	      << ", nsectors = " << m_nSectors
 	      <<  G4endl;
 
@@ -370,7 +527,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
 }
 
 void DetectorConstruction::buildSectorStack(const unsigned sectorNum,
-					    const G4double & minL,
+					    const G4double & minL, 
 					    const G4double & width)
 {
 
@@ -438,7 +595,7 @@ void DetectorConstruction::buildSectorStack(const unsigned sectorNum,
 	  }
 
 	  if (m_caloStruct[i].isSensitiveElement(ie)) m_logicSi.push_back(logi);
-
+	  
 	  G4double xpvpos = -m_CalorSizeXY/2.+minL+width/2+crackOffset;
 	  if (model_ == DetectorConstruction::m_FULLSECTION) xpvpos=0;
 #if 0
@@ -472,7 +629,7 @@ void DetectorConstruction::buildSectorStack(const unsigned sectorNum,
 }//buildstack
 
 void DetectorConstruction::fillInterSectorSpace(const unsigned sectorNum,
-						const G4double & minL,
+						const G4double & minL, 
 						const G4double & width)
 {
 
@@ -545,7 +702,7 @@ G4double DetectorConstruction::getAngOffset(size_t layer){
 void DetectorConstruction::SetMagField(G4double fieldValue)
 {
 
-  if(fieldValue<=0) return;
+  if(fieldValue<=0) return; 
 
   //apply a global uniform magnetic field along Z axis
   G4FieldManager* fieldMgr = G4TransportationManager::GetTransportationManager()->GetFieldManager();
@@ -553,7 +710,18 @@ void DetectorConstruction::SetMagField(G4double fieldValue)
   m_magField = new G4UniformMagField(G4ThreeVector(0.,0.,fieldValue));
   fieldMgr->SetDetectorField(m_magField);
   fieldMgr->CreateChordFinder(m_magField);
-  fieldMgr->SetDetectorField(m_magField);
+  fieldMgr->SetDetectorField(m_magField);  
+}
+
+
+void DetectorConstruction::SetMagField(std::string fileName, G4double zOffset)
+{
+    G4FieldManager* fieldMgr = G4TransportationManager::GetTransportationManager()->GetFieldManager();
+    if(m_magField) delete m_magField; // Delete the existing magnetic field
+    m_magField = new PurgMagTabulatedField3D(filename, zOffset);
+    fieldMgr->SetDetectorField(m_magField);
+    fieldMgr->CreateChordFinder(m_magField);
+    fieldMgr->SetDetectorField(m_magField);
 }
 
 void DetectorConstruction::SetDetModel(G4int model)
@@ -611,7 +779,7 @@ void DetectorConstruction::SetDropLayers(std::string layers)
 }
 
 G4VSolid *DetectorConstruction::constructSolid (std::string baseName, G4double thick, G4double zpos,const G4double & minL, const G4double & width){
-
+  
   G4VSolid *solid;
   if (model_ == DetectorConstruction::m_FULLSECTION){
     double minR = tan(2*atan(exp(-m_maxEta)))*(zpos+m_z0pos+m_CalorSizeZ/2);

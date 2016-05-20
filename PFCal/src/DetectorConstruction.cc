@@ -713,6 +713,16 @@ void DetectorConstruction::SetMagField(G4double fieldValue)
   fieldMgr->SetDetectorField(m_magField);  
 }
 
+
+void DetectorConstruction:SetMagField(string fileName, G4double zOffset)
+{
+    if(m_magField) delete m_magField; // Delete the existing magnetic field
+    m_magField = new PurgMagTabulatedField3D(filename, zOffset);
+    fieldMgr->SetDetectorField(m_magField);
+    fieldMgr->CreateChordFinder(m_magField);
+    fieldMgr->SetDetectorField(m_magField);
+}
+
 void DetectorConstruction::SetDetModel(G4int model)
 {
   if (model <= 0) return;
